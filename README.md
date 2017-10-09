@@ -9,6 +9,8 @@ using npm
 ```
 npm install nek-vue --save
 
+```
+
 ## Usage
 
 ```
