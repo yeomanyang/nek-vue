@@ -10,7 +10,7 @@ UI components based on [Vue.js]
 MIT
 
  [npm-url]: https://www.npmjs.com/package/nek-vue
- [npm-image]: https://img.shields.io/npm/v/npm.svg
+ [npm-image]: https://img.shields.io/npm/v/nek-ui.svg
 
  [travis-url]: https://travis-ci.org/yeomanyang/nek-vue
  [travis-image]: https://travis-ci.org/yeomanyang/nek-vue.svg?branch=develop
