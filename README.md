@@ -1,9 +1,9 @@
 # nek-vue
 UI components based on [Vue.js]
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status][travis-image]][travis-url] [![npm][npm-image]][npm-url]
 
-[![npm][npm-image]][npm-url]
+
 
 
 ### LICENSE
