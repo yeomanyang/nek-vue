@@ -1,6 +1,6 @@
 {
   "name": "nek-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "nek-ui by vue",
   "main": "./dist/nek-vue.min.js",
   "files": [
