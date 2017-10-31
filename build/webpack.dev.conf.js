@@ -9,7 +9,6 @@ var merge = require('webpack-merge');
 var webpackBaseConfig = require('./webpack.base.conf.js');
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
-
 module.exports = merge(webpackBaseConfig, {
     // main.js作为入口，启动路由，抽取vue,vue-router
     entry: {

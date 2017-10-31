@@ -12,6 +12,7 @@ module.exports = merge(webpackBaseConfig, {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist/',
         filename: 'nek-vue.min.js',
+        // 公开出来的包名
         library: 'nek-vue',
         libraryTarget: 'umd',
         umdNamedDefine: true

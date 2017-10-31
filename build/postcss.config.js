@@ -1,20 +1,5 @@
 module.exports = {
-  plugins: [
-    require('postcss-salad')({
-      browsers: ['ie > 9', 'last 2 versions'],
-      features: {
-        bem: {
-          shortcuts: {
-            component: 'b',
-            descendent: 'e',
-            modifier: 'm'
-          },
-          separators: {
-            descendent: '__',
-            modifier: '--'
-          }
-        }
-      }
-    })
-  ]
+    plugins: [
+        require('postcss-salad')(require('./salad.config.json'))
+    ]
 }
