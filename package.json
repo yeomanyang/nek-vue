@@ -11,13 +11,27 @@
     "dev": "export NODE_ENV=developmen && webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --config build/webpack.dev.conf.js",
     "build": "webpack --config build/webpack.prod.conf.js && gulp --gulpfile build/build-style.js",
     "lint-fix": "eslint --ext .js,.vue --fix src/** examples/**",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    }
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-runtime": "^6.12.0",
     "babel-preset-es2015": "^6.24.1",
@@ -44,6 +58,8 @@
     "gulp-rename": "^1.2.2",
     "html-loader": "^0.3.0",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
+    "jest-vue-preprocessor": "^1.3.1",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.1",
@@ -70,6 +86,7 @@
     "vue-router": "^2.7.0",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.4.4",
+    "vue-test-utils": "^1.0.0-beta.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
     "webpack-merge": "^3.0.0"
