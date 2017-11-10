@@ -1,18 +1,23 @@
-import KLButton from './components/KLButton';
+import button from './components/button';
+import icon from './components/icon'; 
 
-const nekVue = {
-    'kl-button': KLButton
-};
+const components = [
+    button,
+    icon
+];
 
 const install = function(Vue) {
-    Object.keys(nekVue).forEach((key) => {
-        Vue.component(key, nekVue[key]);
+    components.map((component) => {
+        Vue.component(component.name, component);
     });
 };
 
-// auto install
 if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default Object.assign(nekVue, {install});
+module.exports = {
+    install,
+    button,
+    icon
+};

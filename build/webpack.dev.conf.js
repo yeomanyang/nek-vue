@@ -17,7 +17,7 @@ module.exports = merge(webpackBaseConfig, {
     },
     // 输出
     output: {
-        path: path.join(__dirname, '../examples/dist'),
+        path: path.join(__dirname, '../examples/lib'),
         publicPath: '',
         filename: '[name].js',
         chunkFilename: '[name].chunk.js'
@@ -35,7 +35,7 @@ module.exports = merge(webpackBaseConfig, {
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendors', filename: 'vendor.bundle.js' }),
         new HtmlWebpackPlugin({
             inject: true,
-            filename: path.join(__dirname, '../examples/dist/index.html'),
+            filename: path.join(__dirname, '../examples/lib/index.html'),
             template: path.join(__dirname, '../examples/index.html')
         }),
         new FriendlyErrorsPlugin()

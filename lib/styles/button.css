@@ -1,0 +1,4 @@
+.kl-button,.kl-button.z-act,.kl-button:active{background:#fff}.kl-button{-webkit-appearance:none;margin:0;overflow:visible;font:inherit;text-transform:none;text-decoration:none;cursor:pointer;box-sizing:border-box;display:inline-block;vertical-align:middle;text-align:center;min-width:80;padding:0 16;border:1px solid #ddd;border-radius:2px;font-size:12px;color:#333;transition-duration:.1s;transition-property:transform;transition-timing-function:ease;white-space:nowrap}.kl-button:focus,.kl-button:hover{// - Apply hover style also to focus state
+    // - Remove default focus style
+    outline:none;// - Required for `a` elements
+    text-decoration:none;background:#fff;border-color:#bbb}.kl-button-sm{height:24px}.kl-button-primary,.kl-button-secondary{height:32px}

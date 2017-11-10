@@ -3,15 +3,16 @@ var path = require('path');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var webpackBaseConfig = require('./webpack.base.conf.js');
+var components = require('../components.json');
+
+process.env.NODE_ENV = 'production';
 
 module.exports = merge(webpackBaseConfig, {
-    entry: {
-        main: './src/index.js'
-    },
+    entry: components,
     output: {
-        path: path.resolve(__dirname, '../dist'),
-        publicPath: '/dist/',
-        filename: 'nek-vue.min.js',
+        path: path.resolve(__dirname, '../lib'),
+        publicPath: '/lib/',
+        filename: '[name].js',
         // 公开出来的包名
         library: 'nek-vue',
         libraryTarget: 'umd',

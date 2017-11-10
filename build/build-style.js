@@ -7,25 +7,13 @@ gulp.task('compile', function() {
   return gulp.src('../src/styles/src/*.css')
     .pipe(postcss([salad]))
     .pipe(cssmin())
-    .pipe(gulp.dest('../dist/styles'));
+    .pipe(gulp.dest('../lib/styles'));
 });
-
-// // 编译less
-// gulp.task('css', function () {
-//     gulp.src('../src/styles/index.less')
-//         .pipe(less())
-//         .pipe(autoprefixer({
-//             browsers: ['last 2 versions', 'ie > 8']
-//         }))
-//         .pipe(cleanCSS())
-//         .pipe(rename('nek-vue.css'))
-//         .pipe(gulp.dest('../dist/styles'));
-// });
 
 // 拷贝字体文件
 gulp.task('copyfonts', function () {
-    gulp.src('../src/styles/common/iconfonts/fonts/*.*')
-        .pipe(gulp.dest('../dist/styles/fonts'));
+    gulp.src('../src/styles/src/common/iconfonts/fonts/*.*')
+        .pipe(gulp.dest('../lib/styles/fonts'));
 });
 
 gulp.task('default', ['compile', 'copyfonts']);

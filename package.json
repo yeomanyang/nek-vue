@@ -1,14 +1,14 @@
 {
   "name": "nek-vue",
-  "version": "0.0.3",
+  "version": "0.0.12",
   "description": "nek-ui by vue",
-  "main": "./dist/nek-vue.min.js",
+  "main": "./lib/nek-vue.min.js",
   "files": [
-    "dist",
+    "lib",
     "src"
   ],
   "scripts": {
-    "dev": "export NODE_ENV=developmen && webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --config build/webpack.dev.conf.js",
     "build": "webpack --config build/webpack.prod.conf.js && gulp --gulpfile build/build-style.js",
     "lint-fix": "eslint --ext .js,.vue --fix src/** examples/**",
     "test": "echo \"Error: no test specified\" && exit 1"
