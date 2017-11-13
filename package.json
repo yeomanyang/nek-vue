@@ -1,11 +1,10 @@
 {
   "name": "nek-vue",
-  "version": "0.0.12",
+  "version": "0.1.2",
   "description": "nek-ui by vue",
-  "main": "./lib/nek-vue.min.js",
+  "main": "./lib/nek-vue.min/index.js",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --config build/webpack.dev.conf.js",

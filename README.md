@@ -15,25 +15,43 @@ npm install nek-vue --save
 
 ```
 import nek from 'nek-vue'
-import 'nek-vue/dist/styles/nek-vue.css'
+import 'nek-vue/lib/style/index.css'
 Vue.use(nek)
 ```
 
 ### 按需引用
 
-```
-import KLButton from 'nek-vue/src/components/KLButton'
-import 'nek-vue/dist/styles/nek-vue.css'
-Vue.component(KLButton.name, KLButton)
-```
+借助 [babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
 
-* 按需引用的时候需要对node_modules中的源码进行babel转换
+首先，安装 babel-plugin-component：
 
 ```
-{ 
-    test: /nek-vue.src.*?js$/, 
-    loader: 'babel-loader' 
-}
+npm install babel-plugin-component -D
+```
+
+然后，在 .babelrc 添加如下配置：
+
+```
+  "plugins": [["component", [
+    {
+      "libraryName": "nek-vue",
+      "styleLibraryName": "style",
+      "styleLibrary": {
+        "name": "/",
+        "base": true,
+        "path": "[module]/style/index.css",
+        "mixin": false
+      },
+      "camel2Dash": true 
+    }
+  ]]]
+```
+
+接下来，如果你只希望引入部分组件，比如 Button 和 Select，那么需要在 main.js 中写入以下内容：
+
+```
+import { Button } from 'nek-vue'
+Vue.component(Button.name, Button)
 ```
 
 ### LICENSE

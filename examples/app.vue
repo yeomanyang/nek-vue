@@ -1,5 +1,5 @@
 <style>
-    @import "../src/styles/src/index.css";
+    @import "../components/style/index.css";
 </style>
 <style scoped>
 nav { margin-bottom: 40px; }
