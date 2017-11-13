@@ -1,12 +1,38 @@
 <template>
     <div>
         <div class="index">
-            <div class="list">
-                <router-link :to="{ name: 'docs'}">组件</router-link>
-                <a href="https://github.com/kaola-fed/nek-ui" target="_blank">
-                    <!-- <Icon type="social-github"></Icon> -->
-                    GitHub
-                </a>
+            <header-bar :isIndex="true"></header-bar>
+            <div :class="$style['kl-index-hero']">
+                <div :class="$style['kl-index-hero__inner']">
+                    <div :class="$style['kl-index-hero__left']">
+                        <img :class="$style['kl-index-hero__logo']" :src="imgs.logo">
+                    </div>
+                    <div :class="$style['kl-index-hero__right']">
+                        <h1>
+                            NEK VUE<br>后台 UI 组件库
+                        </h1>
+                        <p>
+                            <router-link :class="$style['kl-index-hero__button']" :to="{ name: 'docs'}">快速开始</router-link>
+                            <a :class="$style['kl-index-hero__button']" href="https://github.com/kaola-fed/nek-ui" target="_blank">GITHUB</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div :class="$style['kl-highlights']">
+                <div :class="$style['kl-highlights__inner']">
+                    <div :class="$style['kl-highlights__point']">
+                        <h2>丰富</h2>
+                        <p>作为后台组件库，包括了各种场景的组件，避免无意义地造轮子。</p>
+                    </div>
+                    <div :class="$style['kl-highlights__point']">
+                        <h2>规范</h2>
+                        <p>统一了规范，规避了开发人员个人喜好带来的代码不统一问题。</p>
+                    </div>    
+                    <div :class="$style['kl-highlights__point']">
+                        <h2>可定制</h2>
+                        <p>主题色可以根据项目实际情况进行个性化定制。</p>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- 首页动画 -->
@@ -14,10 +40,17 @@
     </div>
 </template>
 <script>
+import HeaderBar from '@/components/HeaderBar.vue';
 export default {
-    data () {
+    components: {
+        HeaderBar
+    },
+    data() {
         return {
-        }
+            imgs: {
+                logo: require('@/assets/images/logo.png')
+            }
+        };
     },
     mounted () {
         this.liziInit();
@@ -162,5 +195,93 @@ export default {
     }
 }
 </script>
-<style>
+<style module>
+@component-namespace kl {
+    @b index-hero {
+        margin-top: 60px;
+        padding: 50px 40px;
+        background-color: #fff;
+        @e inner {
+            max-width: 900px;
+            margin: 0 auto;
+            div {
+                display: inline-block;
+                vertical-align: top;
+                box-sizing: border-box;
+            }
+        }
+        @e logo {
+            width: 215px;
+            height: 215px;
+            float: right;
+            margin-right: 60px;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+        @e left {
+            width: 39%;
+        }
+        @e right {
+            text-align: left;
+            width: 60%;
+            h1 {
+                font-weight: 300;
+                margin: 0;
+                font-size: 3.2em;
+                line-height: normal;
+                color: #2c3e50;
+            }
+            p {
+                word-spacing: 0.05em;
+            }
+        }
+        @e button {
+            margin: 1em 0;
+            font-size: 1.05em;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-right: 1em;
+            border-radius: 5px;
+        }
+        a {
+            padding: 0.75em 2em;
+            display: inline-block;
+            color: #fff;
+            background-color: #31995e;
+            transition: all 0.15s ease;
+            box-sizing: border-box;
+            border: 1px solid #31995e;
+            &:nth-child(2) {
+                background-color: #fff;
+                color: #31995e;
+            };
+        }
+    }
+    @b highlights {
+        background-color: #fff;
+        padding-bottom: 70px;
+        @e inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        @e point {
+            width: 33%;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+            padding: 0 2em;
+            h2 {
+                color: #31995e;
+                font-size: 1.5em;
+                font-weight: 400;
+                margin: 0;
+                padding: 0.5em 0;
+            }
+            p {
+                color: #7f8c8d;
+            }
+        }
+    }
+}
 </style>

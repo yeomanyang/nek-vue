@@ -1,7 +1,7 @@
 <template>
     <header :class="$style['kl-header']">
         <div :class="$style['kl-header__left']" @click="handleClickHome()">
-            <img :class="$style['kl-header__logo']" :src="imgs.logo">
+            <img :class="$style['kl-header__logo']" :src="imgs.logo" v-if="!isIndex">
             <span :class="$style['kl-header__name']" >nek-vue</span>
         </div>
         <div :class="$style['kl-header__right']">
@@ -38,6 +38,12 @@ export default {
                 logo: require('@/assets/images/logo.png')
             }
         };
+    },
+    props: {
+        isIndex: {
+            type: Boolean,
+            default: false
+        }
     },
     methods: {
         handleClickHome() {

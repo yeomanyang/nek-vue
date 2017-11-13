@@ -20,7 +20,7 @@ export default new Router({
             ]
         },
         {
-            path: '/index',
+            path: '',
             name: 'index',
             components: {
                 main: resolve => require(['@/components/index'], resolve)
