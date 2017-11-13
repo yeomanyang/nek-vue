@@ -10,14 +10,8 @@ selenium-debug.log
 
 # Editor directories and files
 .idea
+.vscode
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-
-# vscode plugin files
-.history
-
-# ignore test's coverage files
-coverage
-

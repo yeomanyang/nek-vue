@@ -1,0 +1,165 @@
+@component-namespace kl {
+    @b content {
+        text-align: left;
+        margin-left: 60px;
+        margin-top: 30px;
+        @e title {
+            font-size: 16px;
+            color: #333;
+            padding: 0px 8px;
+            border-left: 3px solid #333;
+            height: 16px;
+            line-height: 16px;
+            z-index: 1;
+            margin: 25px 0 15px;
+            text-align: left;
+            &:before  {
+                content: ' ';
+                display: block;
+                margin-top: -91px;
+                height: 91px;
+                visibility: hidden;
+                margin-top: 0px;
+                height: 0px;
+            };
+            span {
+                color: #ccc;
+                font-weight: normal;
+                padding: 0px 12px;
+            }
+        }
+        @e demo {
+            max-width: 1400px;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-around;
+            justify-content: space-around;
+            align-items: flex-start;
+            background-color: #fff;
+        }
+        @e form-demo {
+            max-width: 1400px;
+            background-color: #fff;
+            overflow: hidden;
+            .float-block {
+                width: 50%;
+                float: left;
+                @media (min-width: 1300px) { 
+                    width: 50%;
+                } 
+                @media (max-width: 1300px) { 
+                    width: 100%; 
+                }
+            }
+        }
+        h1 {
+            font-size: 20px;
+            color: #333;
+            border-bottom: 1px solid #e1e6ec;
+            margin: 40px 0px;
+            line-height: 42px;
+        }
+    }
+    @b content-next {
+        margin-top: 2em;
+        border-top: 1px solid #e5e5e5;
+        display: flex;
+        font-size: 14px;
+        @e pager {
+            margin: 2em 0;
+            color: #0398ff;
+            font-weight: 400;
+            .icon {
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                border-radius: 50%;
+                border: 1px solid #e5e5e5;
+                vertical-align: bottom;
+                margin: 0 1px;
+                text-align: center;
+            }
+            i {
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                border-bottom: 1px solid #e5e5e5;
+            }
+            .icon-left {
+                border-left: 1px solid #e5e5e5;
+                transform: rotateZ(45deg);
+            }
+            .icon-right {
+                border-right: 1px solid #e5e5e5;
+                transform: rotateZ(-45deg);
+            }
+        }
+        .placeholder {
+            flex: 1;
+        }
+    }
+}
+
+/*btn样式*/
+@component-namespace kl {
+    @b btn {
+        -webkit-appearance: none;
+        margin: 0;
+        overflow: visible;
+        font: inherit;
+        text-transform: none;
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: none;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        height: 32px;
+        min-width: 80px;
+        padding: 0 16px;
+        background: #fff;
+        border: 1px solid #ddd;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        line-height: 30px;
+        font-size: 12px;
+        color: #333;
+        -webkit-transition-duration: 0.1s;
+        -moz-transition-duration: 0.1s;
+        transition-duration: 0.1s;
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        transition-property: transform;
+        -webkit-transition-timing-function: ease;
+        -moz-transition-timing-function: ease;
+        transition-timing-function: ease;
+        white-space: nowrap;
+    }
+}
+/*icon样式*/
+@component-namespace kl {
+    @b icon {
+        line-height: inherit;
+        width: 1em;
+        text-align: center;
+        display: inline-block;
+        font: normal normal normal 14px/1 icomoon;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        @e angle-down {
+            &:before {
+                content: "∨";
+                position: relative;
+                top: -2px;
+            };
+        }
+    }
+}
+/*table样式*/
+
