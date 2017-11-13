@@ -1,0 +1,177 @@
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */ margin: 0; padding: 0; }
+* { box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+code, kbd, pre, samp {
+    font-family: Consolas,Menlo,Courier,monospace;
+}
+pre {font-size: 1em;}
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+/* 重置文本格式元素 */
+a { text-decoration: none; color:#34495e; }
+a:hover { text-decoration: none; }
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+q:before, q:after { content: ''; }
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 重置表格元素 */
+table { border-collapse: collapse; border-spacing: 0; }
+/* 重置 hr */
+hr { border: none; height: 1px; }
+
+/* 字体大小 */
+.s-fs-0 { font-size:0; }
+.s-fs-12 { font-size:12px; }
+.s-fs-13 { font-size:13px; }
+.s-fs-14 { font-size:14px; }
+.s-fs-16 { font-size:16px; }
+.s-fs-18 { font-size:18px; }
+.s-fs-20 { font-size:20px; }
+.s-fs-22 { font-size:22px; }
+.s-fs-24 { font-size:24px; }
+.s-fs-26 { font-size:26px; }
+.s-fs-40 {font-size: 40px; }
+
+/* 字体颜色 */
+.s-fc-white  { color:#fff;    }
+.s-fc-blue   { color:#47b7d2; }
+.s-fc-orange { color:#FC6A3A; }
+.s-fc-red    { color:#d22147; }
+.s-fc-green  { color:#00c0ae; }
+.s-fc-yellow { color:#ffb62b; }
+.s-fc-pink   { color:#D2476E; }
+
+.s-fc-1 { color:#111; }
+.s-fc-3 { color:#333; }
+.s-fc-4 { color:#444; }
+.s-fc-5 { color:#555; }
+.s-fc-6 { color:#666; }
+.s-fc-9 { color:#999; }
+.s-fc-d { color:#ddd; }
+
+/* margins */
+.f-mb5 { margin-bottom:5px; }
+.f-mr5 { margin-right:5px;  }
+.f-ml5 { margin-left:5px; }
+.f-mt5 { margin-top:5px; }
+
+.f-mb10 { margin-bottom:10px; }
+.f-mr10 { margin-right:10px;  }
+.f-ml10 { margin-left:10px; }
+.f-mt10 { margin-top:10px; }
+
+.f-mb15 { margin-bottom:15px; }
+.f-mr15 { margin-right:15px;  }
+.f-ml15 { margin-left:15px; }
+.f-mt15 { margin-top:15px; }
+
+.f-mb20 { margin-bottom:20px; }
+.f-mr20 { margin-right:20px;  }
+.f-ml20 { margin-left:20px; }
+.f-mt20 { margin-top:20px; }
+.f-mt30 { margin-top:30px; }
+.f-ml65 { margin-left:65px; }
+.f-ml50 { margin-left: 50px; }
+
+/* functional */
+.f-fr { float:right; }
+.f-fl { float:left; }
+.f-cb:after, .f-cbli li:after {
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+  content: ".";
+}
+.f-cb, .f-cbli li {
+  zoom: 1;
+}
+/* display*/
+.f-ib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.f-dn {
+  display: none;
+}
+
+.f-db {
+  display: block;
+}
+
+.f-df {
+  display: flex;
+}
+
+/* 浮动float */
+.f-fl {
+  float: left;
+}
+
+.f-fr {
+  float: right;
+}
+
+/* 定位   */
+.f-pr {
+  position: relative;
+}
+
+.f-prz {
+  position: relative;
+  zoom: 1;
+}
+
+.f-oh {
+  overflow: hidden;
+}
+
+.f-ai {
+  align-items: center;
+}
+
+.f-jcsa {
+  justify-content: space-around;
+}
+
+/* 字体粗细font-weight */
+.f-fwn {
+  font-weight: normal;
+}
+
+.f-fwb {
+  font-weight: bold;
+}
+
+/* 元素中的文本的水平对齐方式 */
+.f-tal {
+  text-align: left;
+}
+
+.f-tac {
+  text-align: center;
+}
+
+.f-tar {
+  text-align: right;
+}
+
+.f-taj {
+  text-align: justify;
+  text-justify: inter-ideograph;
+}

@@ -1,0 +1,98 @@
+/*Demo样式*/
+@component-namespace kl {
+    @b example {
+        /*min-width: 400px;*/
+        border: 1px solid #e1e6ec;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 16px 24px;
+        font-family: PingFangTC-Regular;
+        font-size: 12px;
+        color: #666;
+        word-wrap: break-word;
+        display: block;
+        margin-bottom: 22px;
+        margin-left: 20px;
+        @e title {
+            position: relative;
+            font-size: 14px;
+            padding: 0px 8px;
+            height: 16px;
+            line-height: 16px;
+            z-index: 2;
+            margin: 10px 0 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: left;
+            &:before {
+                content: " ";
+                width: 6px;
+                height: 6px;
+                border-radius: 100%;
+                background-color: #0398ff;
+                position: absolute;
+                left: -3px;
+                bottom: 5px;
+                z-index: 1;
+            }
+        }
+        @e desc {
+            margin: 1em 0;
+            p {
+                word-spacing: 0.05em;
+                letter-spacing: 1.2px;
+                line-height: 2;
+            }
+            code {
+                font-family: Consolas,Menlo,Courier,monospace;
+                margin: 0 1px;
+                background: #f7f7f7;
+                padding: .2em .4em;
+                border-radius: 3px;
+                font-size: 1em;
+                border: 1px solid #eee;
+            }
+        }
+        @e case {
+            padding: 8px 0px 20px;
+        }
+        @e code {
+            margin: 0px -24px;
+            border-top: 1px solid #e1e6ec;
+            .iconLine {
+                position: relative;
+                text-align: center;
+                color: #b2bfcf;
+                top: -10px;
+                .revert {
+                    transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    -moz-transform: rotate(180deg);
+                    color: #e31436;
+                    border: 1px solid #e31436;
+                }
+            }
+            .iconOuter {
+                display: inline-block;
+                width: 17px;
+                height: 17px;
+                line-height: 18px;
+                border: 1px solid #b2bfcf;
+                border-radius: 9px;
+                background-color: #fff;
+                cursor: pointer;
+                transition: transform 0.5s;
+                -ms-transition: transform 0.5s;
+                -webkit-transition: transform 0.5s;
+                -o-transition: transform 0.5s;
+                -moz-transition: transform 0.5s;
+            }
+            .code_display {
+                padding: 5px 20px;
+                font-size: 13px;
+            }
+        }
+    }
+}
