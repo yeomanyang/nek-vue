@@ -24,13 +24,13 @@
         display: inline-block;
         vertical-align: middle;
         text-align: center;
-        height: var(--height-base);
-        min-width: calc(var(--size-base) * 10);
-        padding: 0 calc(var(--size-base) * 2);
+        /*height: var(--height-base);*/
+        /*min-width: calc(var(--size-base) * 10);*/
+        /*padding: 0 calc(var(--size-base) * 2);*/
         background: #fff;
         border: 1px solid #ddd;
         border-radius: 2px;
-        line-height: calc(var(--height-base) - 2);
+        /*line-height: calc(var(--height-base) - 2);*/
         font-size: 12px;
         color: #333;
         transition-duration: 0.1s;
