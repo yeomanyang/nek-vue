@@ -18,3 +18,6 @@ selenium-debug.log
 # vscode plugin files
 .history
 
+# ignore test's coverage files
+coverage
+

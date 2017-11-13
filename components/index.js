@@ -1,5 +1,5 @@
-import button from './components/button';
-import icon from './components/icon'; 
+import button from './button';
+import icon from './icon'; 
 
 const components = [
     button,

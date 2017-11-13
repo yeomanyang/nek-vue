@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import './common/var.css';
+@import '../../style/theme/var.css';
 
 @component-namespace kl {
     @b button {

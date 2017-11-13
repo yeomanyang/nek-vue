@@ -1,4 +1,4 @@
-import KLIcon from './src/icon.vue';
+import KLIcon from './icon.vue';
 
 KLIcon.install = function(Vue) {
     Vue.component(KLIcon.name, KLIcon);

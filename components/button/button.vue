@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import KLIcon from '../../icon/index';
+import KLIcon from '../icon/index';
 
 export default {
     name: 'kl-button',

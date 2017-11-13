@@ -4,7 +4,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app.vue';
-import nekVue from '../src/index';
+import nekVue from '../components/index';
 
 Vue.use(VueRouter);
 Vue.use(nekVue);
