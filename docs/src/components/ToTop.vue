@@ -11,13 +11,13 @@ export default {
 
     data() {
         return {
-            show: true,
+            show: true
             
-        }
+        };
     },
-    mounted: function () {
-        this.$nextTick(function () {
-            if (this.$parent.$el.scrollTop > 0 ) {
+    mounted() {
+        this.$nextTick(function() {
+            if (this.$parent.$el.scrollTop > 0) {
                 this.show = true;
             } else {
                 this.show = false;
@@ -28,7 +28,7 @@ export default {
         changeTotop() {
             console.log(1);
         }
-    },
+    }
 
 };
 </script>

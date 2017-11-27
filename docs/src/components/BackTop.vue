@@ -31,21 +31,21 @@
                 default: 1000
             }
         },
-        data () {
+        data() {
             return {
                 backTop: false
             };
         },
-        mounted () {
+        mounted() {
             on(window, 'scroll', this.handleScroll);
             on(window, 'resize', this.handleScroll);
         },
-        beforeDestroy () {
+        beforeDestroy() {
             off(window, 'scroll', this.handleScroll);
             off(window, 'resize', this.handleScroll);
         },
         computed: {
-            classes () {
+            classes() {
                 return [
                     `${prefixCls}`,
                     {
@@ -53,21 +53,21 @@
                     }
                 ];
             },
-            styles () {
+            styles() {
                 return {
                     bottom: `${this.bottom}px`,
                     right: `${this.right}px`
                 };
             },
-            innerClasses () {
+            innerClasses() {
                 return `${prefixCls}-inner`;
             }
         },
         methods: {
-            handleScroll () {
+            handleScroll() {
                 this.backTop = window.pageYOffset >= this.height;
             },
-            back () {
+            back() {
                 const sTop = document.documentElement.scrollTop || document.body.scrollTop;
                 scrollTop(window, sTop, 0, this.duration);
                 this.$emit('on-click');

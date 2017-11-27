@@ -51,7 +51,7 @@ export default {
                 name: 'index'
             });
         },
-        handleChangeLang () {
+        handleChangeLang() {
             const lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN';
         },
         handleGoUserCenter() {

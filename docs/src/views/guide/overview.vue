@@ -4,18 +4,18 @@
 </template>
 <script>
     export default {
-        data () {
+        data() {
             return {
-                navigate: navigate,
+                navigate,
                 filePath: Config.filePath,
                 span: 8
-            }
+            };
         },
         computed: {
         
         },
         methods: {
-            updateSpin () {
+            updateSpin() {
                 const width = document.body.clientWidth;
                 if (width > 1440) {
                     this.span = 6;
@@ -24,7 +24,7 @@
                 }
             }
         }
-    }
+    };
 </script>
 <style lang="less">
     .overview{

@@ -32,7 +32,7 @@ import menuItem from './menuItem';
 export default {
     data() {
         return {
-            menuItem: menuItem
+            menuItem
         };
     },
     methods: {
