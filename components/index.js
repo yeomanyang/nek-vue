@@ -1,9 +1,15 @@
 import button from './button';
-import icon from './icon'; 
+import icon from './icon';
+import dropdown from './dropdown';
+import dropdownItem from './dropdown-item';
+import dropdownMenu from './dropdown-menu';
 
 const components = [
     button,
-    icon
+    icon,
+    dropdown,
+    dropdownItem,
+    dropdownMenu
 ];
 
 const install = function(Vue) {
@@ -19,5 +25,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 module.exports = {
     install,
     button,
-    icon
+    icon,
+    dropdown,
+    dropdownItem,
+    dropdownMenu
 };
