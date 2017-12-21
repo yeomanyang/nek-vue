@@ -4,6 +4,11 @@
 <script>
     export default {
         name: 'kl-dropdown-item',
+        data() {
+            return {
+                soda: {}
+            };
+        },
         props: {
             disabled: {
                 type: Boolean,
@@ -20,21 +25,25 @@
         },
         methods: {
             onClick() {
-                console.log(this);
-                this.$emit('click', this);
+                this.$soda.commit('click');
+
+                if (this.soda.trigger == 'custom') {
+                    return;
+                }
+                this.$soda.commit('changeVisible', true);
             }
         },
         computed: {
-            classes () {
+            classes() {
                 return [
                     'kl-dropdown-item',
                     {
-                        [`kl-dropdown-item--disabled`]: this.disabled,
-                        [`kl-dropdown-item--selected`]: this.selected,
-                        [`kl-dropdown-item--divided`]: this.divided
+                        'kl-dropdown-item--disabled': this.disabled,
+                        'kl-dropdown-item--selected': this.selected,
+                        'kl-dropdown-item--divided': this.divided
                     }
                 ];
             }
-        },
+        }
     };
 </script>

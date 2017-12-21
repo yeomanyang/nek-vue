@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8083 --config build/webpack.dev.conf.js",
     "build": "webpack --config build/webpack.prod.conf.js && gulp --gulpfile build/build-style.js",
-    "lint-fix": "eslint --ext .js,.vue --fix src/** examples/**",
+    "lint-fix": "eslint --ext .js,.vue --fix components/** examples/**",
     "coverage": "jest --coverage",
     "test": "jest",
     "doc_dev": "cd docs && npm run dev"

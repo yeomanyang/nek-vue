@@ -3,6 +3,6 @@
 </template>
 <script>
     export default {
-        name: 'kl-dropdown-menu',
+        name: 'kl-dropdown-menu'
     };
 </script>
