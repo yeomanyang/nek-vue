@@ -1,59 +1,59 @@
 <template>
     <div class="kl-dropdown">
-        <div class="kl-dropdown__header" @click="onClick">
+        <div class="kl-dropdown__header" ref="reference" @click="onClick">
             <slot></slot>
         </div>
-        <div class="kl-dropdown__footer" v-bind:class="{ 'kl-dropdown__footer--show': !currentVisible }">
-            <slot name="list"></slot>
-        </div>
+        <kl-popper
+            class="kl-dropdown__footer"
+            :reference="this.$refs.reference"
+            :appendToBody="appendToBody"
+            :placement="placement"
+            :isShow.sync="isShowPopper">
+                <slot name="list"></slot>
+        </kl-popper>
     </div>
 </template>
 <script>
+    import popper from '../../popper/src/popper.vue';
+
     import store from './store';
     import Soda from '../../util/soda';
 
     export default {
         name: 'kl-dropdown',
-        computed: {
-            currentVisible() {
-                return this.soda.visible;
-            }
-        },
-        watch: {
-            visible(val) {
-                this.$soda.commit('changeVisible', val);
-            }
-        },
-        data() {
-            return {
-                soda: {}
-            };
-        },
-        props: {
-            visible: {
+        component: { popper },
+         props: {
+            isShow: {
+                type: Boolean,
+                default: false
+            },
+            appendToBody: {
                 type: Boolean,
                 default: true
             },
             trigger: {
                 type: String,
                 default: 'click'
-            }
+            },
+            placement: {
+                type: String,
+                default: 'bottom'
+            },
+        },
+        data () {
+            return {
+                isShowPopper: this.isShow
+            };
         },
         methods: {
             onClick() {
-                this.$emit('click');
-                if (this.soda.trigger == 'custom') {
+                if (this.trigger == 'custom') {
+                    this.isShowPopper = true;
                     return;
                 }
-                this.$soda.commit('changeVisible', !this.soda.visible);
-            }
-        },
-        mounted() {
-            this.$nextTick(() => {
-                this.$soda = new Soda(this, store);
-                this.soda.visible = this.visible;
-                this.soda.trigger = this.trigger;
-            });
+                this.isShowPopper = !this.isShowPopper;
+            },
         }
     };
+
 </script>

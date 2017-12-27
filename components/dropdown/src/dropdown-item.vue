@@ -25,12 +25,15 @@
         },
         methods: {
             onClick() {
-                this.$soda.commit('click');
+                const $parent = this.$parent.$parent.$parent;
 
-                if (this.soda.trigger == 'custom') {
+                $parent.$emit('click');
+                console.log($parent);
+
+                if ($parent.trigger == 'custom') {
                     return;
                 }
-                this.$soda.commit('changeVisible', true);
+                $parent.isShowPopper = false;
             }
         },
         computed: {

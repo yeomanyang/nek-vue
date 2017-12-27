@@ -29,4 +29,10 @@ gulp.task('copyfonts', function () {
         .pipe(gulp.dest('../lib/'));
 });
 
+// 拷贝animate
+gulp.task('copyfonts', function () {
+    gulp.src('../components/style/core/animate.css')
+        .pipe(gulp.dest('../lib/'));
+});
+
 gulp.task('default', ['compile', 'copyfonts']);

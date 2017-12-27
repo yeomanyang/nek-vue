@@ -1,7 +1,7 @@
 const store = {
     state() {
         return {
-            visible: true,
+            isShow: false,
             trigger: 'click'
         };
     },
@@ -9,8 +9,9 @@ const store = {
         click() {
             this.root.$emit('onItemClick');
         },
-        changeVisible(state, isVisible) {
-            this.state.visible = isVisible;
+        isShow(state, isShow) {
+            console.log(this.state)
+            this.state.isShow = isShow;
         },
         changeTrigger(state, type) {
             this.state.trigger = type;

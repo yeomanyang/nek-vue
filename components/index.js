@@ -3,30 +3,29 @@ import icon from './icon';
 import dropdown from './dropdown';
 import dropdownItem from './dropdown-item';
 import dropdownMenu from './dropdown-menu';
+import popper from './popper';
 
-const components = [
+const components = {
     button,
     icon,
     dropdown,
     dropdownItem,
-    dropdownMenu
-];
+    dropdownMenu,
+    popper
+};
 
 const install = function(Vue) {
-    components.map((component) => {
-        Vue.component(component.name, component);
-    });
+    for (const component in components) {
+        if (components.hasOwnProperty(component)) {
+            Vue.component(components[component].name, components[component]);
+        }
+    }
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-module.exports = {
-    install,
-    button,
-    icon,
-    dropdown,
-    dropdownItem,
-    dropdownMenu
-};
+components.install = install;
+
+module.exports = components;

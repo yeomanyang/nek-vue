@@ -110,5 +110,8 @@
   "bugs": {
     "url": "https://github.com/yeomanyang/nek-vue/issues"
   },
-  "homepage": "https://github.com/yeomanyang/nek-vue#readme"
+  "homepage": "https://github.com/yeomanyang/nek-vue#readme",
+  "dependencies": {
+    "popper.js": "^1.12.9"
+  }
 }

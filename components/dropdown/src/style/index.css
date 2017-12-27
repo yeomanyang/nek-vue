@@ -10,7 +10,7 @@
             font-size: 12px;
         }
         @e footer {
-            display: none;
+            /* display: none; */
             position: absolute;
             width: inherit;
             max-height: 200px;
@@ -21,7 +21,6 @@
             box-sizing: border-box;
             border-radius: 4px;
             box-shadow: 0 1px 6px rgba(0,0,0,.2);
-            position: absolute;
             z-index: 900;
             @m show {
                 display: inline-block;
