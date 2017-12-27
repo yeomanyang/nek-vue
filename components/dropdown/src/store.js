@@ -10,7 +10,6 @@ const store = {
             this.root.$emit('onItemClick');
         },
         isShow(state, isShow) {
-            console.log(this.state)
             this.state.isShow = isShow;
         },
         changeTrigger(state, type) {
