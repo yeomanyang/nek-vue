@@ -18,6 +18,10 @@ const router = new VueRouter({
         {
             path: '/button',
             component: require('./routers/button.vue')
+        },
+        {
+            path: '/form',
+            component: require('./routers/form.vue')
         }
     ]
 });

@@ -1,19 +1,20 @@
 # nek-vue
+
 UI components based on [Vue.js]
 
 [![Build Status][travis-image]][travis-url] [![npm][npm-image]][npm-url]
 
-### Install nek-vue
+## Install nek-vue
 
 using npm
-```
-npm install nek-vue --save
 
+```javascript
+npm install nek-vue --save
 ```
 
 ## Usage
 
-```
+```javascript
 import nek from 'nek-vue'
 import 'nek-vue/lib/style/index.css'
 Vue.use(nek)
@@ -25,13 +26,13 @@ Vue.use(nek)
 
 首先，安装 babel-plugin-component：
 
-```
+```bash
 npm install babel-plugin-component -D
 ```
 
 然后，在 .babelrc 添加如下配置：
 
-```
+```babel
   "plugins": [["component", [
     {
       "libraryName": "nek-vue",
@@ -42,19 +43,20 @@ npm install babel-plugin-component -D
         "path": "[module]/style/index.css",
         "mixin": false
       },
-      "camel2Dash": true 
+      "camel2Dash": true
     }
   ]]]
 ```
 
 接下来，如果你只希望引入部分组件，比如 Button 和 Select，那么需要在 main.js 中写入以下内容：
 
-```
+```javascript
 import { Button } from 'nek-vue'
 Vue.component(Button.name, Button)
 ```
 
-### LICENSE
+## LICENSE
+
 MIT
 
  [npm-url]: https://www.npmjs.com/package/nek-vue
