@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import '../../../style/theme/var.css';
+
+@component-namespace kl {
+    @b dropdown {
+        display: inline-block;
+        position: relative;
+        @e header {
+            display: inline-block;
+            font-size: 12px;
+        }
+        @e footer {
+            /* display: none; */
+            position: absolute;
+            width: inherit;
+            max-height: 200px;
+            overflow: auto;
+            margin: 5px 0;
+            padding: 5px 0;
+            background-color: #fff;
+            box-sizing: border-box;
+            border-radius: 4px;
+            box-shadow: 0 1px 6px rgba(0,0,0,.2);
+            z-index: 900;
+            @m show {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@component-namespace kl {
+    @b dropdown-item {
+        list-style: none;
+        margin: 0;
+        line-height: normal;
+        padding: 7px 16px;
+        clear: both;
+        color: #495060;
+        font-size: 12px!important;
+        white-space: nowrap;
+        list-style: none;
+        cursor: pointer;
+        transition: background .2s ease-in-out;
+        &:hover {
+            background: #f3f3f3;
+        }
+        @m disabled {
+            color: #bbbec4;
+            cursor: not-allowed;
+        }
+        @m divided {
+            margin-top: 5px;
+            border-top: 1px solid #e9eaec;
+        }
+    }
+}
+

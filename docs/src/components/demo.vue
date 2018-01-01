@@ -21,17 +21,17 @@
 </template>
 <script>
 export default {
-    name: 'Demo',
+    name: 'kl-demo',
     props: {
         title: {
             type: String,
             default: ''
         }
     },
-    data () {
+    data() {
         return {
             showCode: false
-        }
+        };
     }
-}
+};
 </script>

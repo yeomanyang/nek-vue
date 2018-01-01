@@ -21,7 +21,7 @@
     import tag_map from './tag-map';
 
     function replaceTag(source, tagMap) {
-        Object.keys(tagMap).forEach(i => {
+        Object.keys(tagMap).forEach((i) => {
             source = source
                 .replace(new RegExp(`<${i}\(\\W+\)`, 'g'), `<${tagMap[i]}$1`)
                 .replace(new RegExp(`<\/${i}>`, 'g'), `<\/${tagMap[i]}>`);
@@ -30,6 +30,7 @@
     }
 
     export default {
+        name: 'klCode',
         props: {
             lang: {
                 type: String,
@@ -40,25 +41,25 @@
                 default: false
             }
         },
-        data () {
+        data() {
             return {
                 openScale: false,
                 code: '',
                 copied: false,
                 docLang: this.$lang,
                 title: 'Code'
-            }
+            };
         },
         computed: {
-            language () {
+            language() {
                 if (this.lang == 'auto') {
-                    return ''
-                } else {
-                    return this.lang;
-                }
+                    return '';
+                } 
+                return this.lang;
+            
             }
         },
-        mounted () {
+        mounted() {
             this.code = this.$refs.code.innerHTML.replace(/\n/, '');
             this.$refs.code.innerHTML = this.code;
             hljs.highlightBlock(this.$refs.code);
@@ -146,7 +147,7 @@
             //     document.body.removeChild(form);
             // }
         }
-    }
+    };
 </script>
 <style module>
 @componet-namespace kl {

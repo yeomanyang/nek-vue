@@ -1,5 +1,5 @@
 export default [{
-    path: 'KLButton',
+    path: 'components/KLButton',
     name: 'KLButton',
     component: resolve => require(['@/views/components/button'], resolve)
 }];

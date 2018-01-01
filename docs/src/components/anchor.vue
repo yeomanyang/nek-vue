@@ -26,7 +26,7 @@
   //               return this.title.replace(/\s/g, '_');
   //           }
   //       }
-    }
+    };
 </script>
 <style lang="less">
     .anchor{

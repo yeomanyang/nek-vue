@@ -1,12 +1,38 @@
 <template>
     <div>
         <div class="index">
-            <div class="list">
-                <router-link :to="{ name: 'docs'}">组件</router-link>
-                <a href="https://github.com/kaola-fed/nek-ui" target="_blank">
-                    <!-- <Icon type="social-github"></Icon> -->
-                    GitHub
-                </a>
+            <header-bar :isIndex="true"></header-bar>
+            <div :class="$style['kl-index-hero']">
+                <div :class="$style['kl-index-hero__inner']">
+                    <div :class="$style['kl-index-hero__left']">
+                        <img :class="$style['kl-index-hero__logo']" :src="imgs.logo">
+                    </div>
+                    <div :class="$style['kl-index-hero__right']">
+                        <h1>
+                            NEK VUE<br>后台 UI 组件库
+                        </h1>
+                        <p>
+                            <router-link :class="$style['kl-index-hero__button']" :to="{ name: 'docs'}">快速开始</router-link>
+                            <a :class="$style['kl-index-hero__button']" href="https://github.com/kaola-fed/nek-ui" target="_blank">GITHUB</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div :class="$style['kl-highlights']">
+                <div :class="$style['kl-highlights__inner']">
+                    <div :class="$style['kl-highlights__point']">
+                        <h2>丰富</h2>
+                        <p>作为后台组件库，包括了各种场景的组件，避免无意义地造轮子。</p>
+                    </div>
+                    <div :class="$style['kl-highlights__point']">
+                        <h2>规范</h2>
+                        <p>统一了规范，规避了开发人员个人喜好带来的代码不统一问题。</p>
+                    </div>    
+                    <div :class="$style['kl-highlights__point']">
+                        <h2>可定制</h2>
+                        <p>主题色可以根据项目实际情况进行个性化定制。</p>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- 首页动画 -->
@@ -14,19 +40,26 @@
     </div>
 </template>
 <script>
+import HeaderBar from '@/components/HeaderBar.vue';
 export default {
-    data () {
-        return {
-        }
+    components: {
+        HeaderBar
     },
-    mounted () {
+    data() {
+        return {
+            imgs: {
+                logo: require('@/assets/images/logo.png')
+            }
+        };
+    },
+    mounted() {
         this.liziInit();
     },
     methods: {
         /*动画效果*/
-        liziInit () {
-            var canvas = document.querySelector("#indexLizi"),
-                ctx = canvas.getContext("2d"),
+        liziInit() {
+            let canvas = document.querySelector('#indexLizi'),
+                ctx = canvas.getContext('2d'),
                 particles = [],
                 amount = 0,
                 mouse = {
@@ -35,24 +68,26 @@ export default {
                 },
                 radius = 0.7; //Init radius of the force field
 
-            var colors = ["rgba(26, 188, 156, .6)", "rgba(46, 204, 113, .4)", "rgba(52, 152, 219, .4)", "rgba(52, 152, 219, .4)", "rgba(241, 196, 15, .6)", "rgba(231, 76, 60, .4)"];
+            let colors = ['rgba(26, 188, 156, .6)', 'rgba(46, 204, 113, .4)', 'rgba(52, 152, 219, .4)', 'rgba(52, 152, 219, .4)',
+                'rgba(241, 196, 15, .6)', 'rgba(231, 76, 60, .4)'];
 
-            var colorsTwo = ["rgba(26, 188, 156, 1)", "rgba(46, 204, 113, 1)", "rgba(52, 152, 219, 1)", "rgba(52, 152, 219, 1)", "rgba(241, 196, 15, 1)", "rgba(231, 76, 60, 1)"];
+            let colorsTwo = ['rgba(26, 188, 156, 1)', 'rgba(46, 204, 113, 1)', 'rgba(52, 152, 219, 1)', 'rgba(52, 152, 219, 1)',
+                'rgba(241, 196, 15, 1)', 'rgba(231, 76, 60, 1)'];
 
-            var copy = "nek-ui"; // Text to display
+            let copy = 'nek-ui'; // Text to display
 
-            var initSize = Math.floor(Math.random() * .6) + 1  ;
-            var hoverSize = initSize + .7;
+            let initSize = Math.floor(Math.random() * .6) + 1;
+            let hoverSize = initSize + .7;
 
-            var ww = canvas.width = window.innerWidth;
-            var wh = canvas.height = window.innerHeight;
+            let ww = canvas.width = window.innerWidth;
+            let wh = canvas.height = window.innerHeight;
 
             function Particle(x, y) {
                 this.x = Math.random() * ww;
                 this.y = Math.random() * wh;
                 this.dest = {
-                    x: x,
-                    y: y
+                    x,
+                    y
                 };
                 this.vx = (Math.random() - 0.5) * 2;
                 this.vy = (Math.random() - 0.5) * 2;
@@ -77,10 +112,10 @@ export default {
                 ctx.arc(this.x, this.y, this.r, Math.PI * 2, false);
                 ctx.fill();
 
-                var a = this.x - mouse.x;
-                var b = this.y - mouse.y;
+                let a = this.x - mouse.x;
+                let b = this.y - mouse.y;
 
-                var distance = Math.sqrt(a * a + b * b);
+                let distance = Math.sqrt(a * a + b * b);
                 if (distance < (radius * 70)) {
                     this.accX = (this.x - mouse.x) / 20;
                     this.accY = (this.y - mouse.y) / 20;
@@ -95,9 +130,9 @@ export default {
                 if (distance > (radius * 70)) {
                     this.colorOne = colors[Math.floor(Math.random() * 10)];
                     ctx.fillStyle = this.colorOne;
-                    this.r = initSize
+                    this.r = initSize;
                 }
-            }
+            };
 
             function onMouseMove(e) {
                 mouse.x = e.clientX;
@@ -110,17 +145,17 @@ export default {
 
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                ctx.font = "bold " + (ww / 10) + "px sans-serif"; // Size of the text
-                ctx.textAlign = "center";
+                ctx.font = `bold ${ww / 10}px sans-serif`; // Size of the text
+                ctx.textAlign = 'center';
                 ctx.fillText(copy, ww / 2, wh / 2); //Centering
 
-                var data = ctx.getImageData(0, 0, ww, wh).data;
+                let data = ctx.getImageData(0, 0, ww, wh).data;
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.globalCompositeOperation = "screen";
+                ctx.globalCompositeOperation = 'screen';
 
                 particles = [];
-                for (var i = 0; i < ww; i += Math.round(ww / 400)) { //400 here represents the amount of particles
-                    for (var j = 0; j < wh; j += Math.round(ww / 400)) {
+                for (let i = 0; i < ww; i += Math.round(ww / 400)) { //400 here represents the amount of particles
+                    for (let j = 0; j < wh; j += Math.round(ww / 400)) {
                         if (data[((i + j * ww) * 4) + 3] > 250) {
                             particles.push(new Particle(i, j));
                         }
@@ -146,21 +181,109 @@ export default {
             function render(a) {
                 requestAnimationFrame(render);
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (var i = 0; i < amount; i++) {
+                for (let i = 0; i < amount; i++) {
                     particles[i].render();
                 }
             };
 
-            window.addEventListener("resize", initScene);
-            window.addEventListener("mousemove", onMouseMove);
-            window.addEventListener("mousedown", onMouseClick);
-            window.addEventListener("mouseup", delayedInitRadius);
+            window.addEventListener('resize', initScene);
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('mousedown', onMouseClick);
+            window.addEventListener('mouseup', delayedInitRadius);
             initScene();
             requestAnimationFrame(render);
-        },
+        }
         /*语言切换*/
     }
-}
+};
 </script>
-<style>
+<style module>
+@component-namespace kl {
+    @b index-hero {
+        margin-top: 60px;
+        padding: 50px 40px;
+        background-color: #fff;
+        @e inner {
+            max-width: 900px;
+            margin: 0 auto;
+            div {
+                display: inline-block;
+                vertical-align: top;
+                box-sizing: border-box;
+            }
+        }
+        @e logo {
+            width: 215px;
+            height: 215px;
+            float: right;
+            margin-right: 60px;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+        @e left {
+            width: 39%;
+        }
+        @e right {
+            text-align: left;
+            width: 60%;
+            h1 {
+                font-weight: 300;
+                margin: 0;
+                font-size: 3.2em;
+                line-height: normal;
+                color: #2c3e50;
+            }
+            p {
+                word-spacing: 0.05em;
+            }
+        }
+        @e button {
+            margin: 1em 0;
+            font-size: 1.05em;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-right: 1em;
+            border-radius: 5px;
+        }
+        a {
+            padding: 0.75em 2em;
+            display: inline-block;
+            color: #fff;
+            background-color: #31995e;
+            transition: all 0.15s ease;
+            box-sizing: border-box;
+            border: 1px solid #31995e;
+            &:nth-child(2) {
+                background-color: #fff;
+                color: #31995e;
+            };
+        }
+    }
+    @b highlights {
+        background-color: #fff;
+        padding-bottom: 70px;
+        @e inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        @e point {
+            width: 33%;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+            padding: 0 2em;
+            h2 {
+                color: #31995e;
+                font-size: 1.5em;
+                font-weight: 400;
+                margin: 0;
+                padding: 0.5em 0;
+            }
+            p {
+                color: #7f8c8d;
+            }
+        }
+    }
+}
 </style>

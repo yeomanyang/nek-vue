@@ -1,3 +1,5 @@
 @import "./core/base";
+@import "./core/animate";
 @import "../button/style/index";
 @import "../icon/style/index";
+@import "../dropdown/src/style/index";

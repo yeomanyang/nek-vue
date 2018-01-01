@@ -21,8 +21,8 @@ export default {
     ],
     componentItem: [
         {
-           title: '布局',
-           children: [
+            title: '布局',
+            children: [
                 {
                     title: '卡片',
                     titleEn: 'KLCard'
@@ -38,12 +38,12 @@ export default {
                 {
                     title: '表格',
                     titleEn: 'KLTable'
-                },
-           ]
+                }
+            ]
         },
         {
-           title: '表单',
-           children: [
+            title: '表单',
+            children: [
                 {
                     title: '按钮',
                     titleEn: 'KLButton'
@@ -96,11 +96,11 @@ export default {
                     title: '上传文件',
                     titleEn: 'KLUpload'
                 }
-           ]
+            ]
         },
         {
-           title: '通知',
-           children: [
+            title: '通知',
+            children: [
                 {
                     title: '消息',
                     titleEn: 'KLMessage'
@@ -116,12 +116,12 @@ export default {
                 {
                     title: '确认提示',
                     titleEn: 'KLPopConfirm'
-                },
-           ]
+                }
+            ]
         },
         {
-           title: '导航',
-           children: [
+            title: '导航',
+            children: [
                 {
                     title: '面包屑',
                     titleEn: 'KLCrumb'
@@ -146,11 +146,11 @@ export default {
                     title: '选项卡',
                     titleEn: 'KLTabs'
                 }
-           ]
+            ]
         },
         {
-           title: '其他',
-           children: [
+            title: '其他',
+            children: [
                 {
                     title: '徽标',
                     titleEn: 'KLBadge'
@@ -179,7 +179,7 @@ export default {
                     title: '文字提示',
                     titleEn: 'KLTooltip'
                 }
-           ]
+            ]
         }
     ]
 };

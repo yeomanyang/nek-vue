@@ -3,7 +3,7 @@
         <h2 class="kl-content__title">按钮<span>KLButton</span></h2>
         <div class="kl-content__form-demo">
             <div class="float-block">
-                <Demo title="按钮类型">
+                <kl-demo title="按钮类型">
                     <div slot="desc">
                         <p>主按钮、次按钮、弱按钮及不可点4种状态，主按钮在同一操作区只能出现一个</p>
                         <p>通过设置<code>type</code>为<code>primary</code>、<code>ghost</code>、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code>error</code>创建不同样式的按钮，不设置为默认样式。</p>
@@ -15,10 +15,10 @@
                         <button disabled="disabled" class="kl-btn" :class="$style['kl-disabled']">不可点</button>
                     </div>
                     <div slot="code">
-                        <i-code lang="html" slot="code">{{ code.icon }}</i-code>
+                        <kl-code lang="html" slot="code">{{ code.icon }}</kl-code>
                     </div>
-                </Demo>
-                <Demo title="按钮类型">
+                </kl-demo>
+                <kl-demo title="按钮类型">
                     <div slot="desc">
                         <p>主按钮、次按钮、弱按钮及不可点4种状态，主按钮在同一操作区只能出现一个</p>
                         <p>通过设置<code>type</code>为<code>primary</code>、<code>ghost</code>、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code>error</code>创建不同样式的按钮，不设置为默认样式。</p>
@@ -30,10 +30,10 @@
                         <button disabled="disabled" class="kl-btn" :class="$style['kl-disabled']">不可点</button>
                     </div>
                     <div slot="code">
-                        <i-code lang="html" slot="code">{{ code.icon }}</i-code>
+                        <kl-code lang="html" slot="code">{{ code.icon }}</kl-code>
                     </div>
-                </Demo>
-                <Demo title="按钮类型">
+                </kl-demo>
+                <kl-demo title="按钮类型">
                     <div slot="desc">
                         <p>主按钮、次按钮、弱按钮及不可点4种状态，主按钮在同一操作区只能出现一个</p>
                         <p>通过设置<code>type</code>为<code>primary</code>、<code>ghost</code>、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code>error</code>创建不同样式的按钮，不设置为默认样式。</p>
@@ -45,12 +45,12 @@
                         <button disabled="disabled" class="kl-btn" :class="$style['kl-disabled']">不可点</button>
                     </div>
                     <div slot="code">
-                        <i-code lang="html" slot="code">{{ code.icon }}</i-code>
+                        <kl-code lang="html" slot="code">{{ code.icon }}</kl-code>
                     </div>
-                </Demo>
+                </kl-demo>
             </div>
             <div class="float-block">
-                <Demo title="按钮类型">
+                <kl-demo title="按钮类型">
                     <div slot="desc">
                         <p>主按钮、次按钮、弱按钮及不可点4种状态，主按钮在同一操作区只能出现一个</p>
                         <p>通过设置<code>type</code>为<code>primary</code>、<code>ghost</code>、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code>error</code>创建不同样式的按钮，不设置为默认样式。</p>
@@ -62,10 +62,10 @@
                         <button disabled="disabled" class="kl-btn" :class="$style['kl-disabled']">不可点</button>
                     </div>
                     <div slot="code">
-                        <i-code lang="html" slot="code">{{ code.icon }}</i-code>
+                        <kl-code lang="html" slot="code">{{ code.icon }}</kl-code>
                     </div>
-                </Demo>
-                <Demo title="按钮类型">
+                </kl-demo>
+                <kl-demo title="按钮类型">
                     <div slot="desc">
                         <p>主按钮、次按钮、弱按钮及不可点4种状态，主按钮在同一操作区只能出现一个</p>
                         <p>通过设置<code>type</code>为<code>primary</code>、<code>ghost</code>、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code>error</code>创建不同样式的按钮，不设置为默认样式。</p>
@@ -77,10 +77,10 @@
                         <button disabled="disabled" class="kl-btn" :class="$style['kl-disabled']">不可点</button>
                     </div>
                     <div slot="code">
-                        <i-code lang="html" slot="code">{{ code.icon }}</i-code>
+                        <kl-code lang="html" slot="code">{{ code.icon }}</kl-code>
                     </div>
-                </Demo>
-                <Demo title="按钮类型">
+                </kl-demo>
+                <kl-demo title="按钮类型">
                     <div slot="desc">
                         <p>主按钮、次按钮、弱按钮及不可点4种状态，主按钮在同一操作区只能出现一个</p>
                         <p>通过设置<code>type</code>为<code>primary</code>、<code>ghost</code>、<code>dashed</code>、<code>text</code>、<code>info</code>、<code>success</code>、<code>warning</code>、<code>error</code>创建不同样式的按钮，不设置为默认样式。</p>
@@ -92,9 +92,9 @@
                         <button disabled="disabled" class="kl-btn" :class="$style['kl-disabled']">不可点</button>
                     </div>
                     <div slot="code">
-                        <i-code lang="html" slot="code">{{ code.icon }}</i-code>
+                        <kl-code lang="html" slot="code">{{ code.icon }}</kl-code>
                     </div>
-                </Demo>
+                </kl-demo>
             </div>
         </div>
         <div class="kl-content-table">
@@ -203,24 +203,19 @@
     </div>
 </template>
 <script>
-import iCode from 'iCode';
-import Demo from '../../components/demo.vue';
+
 import Code from '../../code/button';
 export default {
-    components: {
-        iCode,
-        Demo
-    },
-    name: 'KLbutton',
-    data () {
+    name: 'kL-button',
+    data() {
         return {
-           code: Code
-        }
+            code: Code
+        };
     },
     methods: {
 
     }
-}
+};
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style module>
