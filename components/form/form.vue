@@ -5,58 +5,83 @@
 </template>
 
 <script>
-export default {
-    name: 'kl-form',
-    props: {
-        data: Object,
-        layout: {
-            type: String,
-            default: 'horizontal'
+    export default {
+        name: 'kl-form',
+        props: {
+            data: Object,
+            layout: {
+                type: String,
+                default: 'horizontal'
+            },
+            labelWidth: String,
+            rules: Object,
+            colon: {
+                type: Boolean,
+                default: true
+            },
+            showMessage: {
+                type: Boolean,
+                default: true
+            },
+            statusIcon: {
+                type: Boolean,
+                default: false
+            }
         },
-        labelWidth: String,
-        rules: Object,
-        colon: {
-            type: Boolean,
-            default: true
-        },
-        showMessage: {
-            type: Boolean,
-            default: true
-        },
-        statusIcon: {
-            type: Boolean,
-            default: false
-        }
-    },
-    data() {
-        return {
-            fields: []
-        };
-    },
-    created() {
-        this.$on('form-item-add', (field) => {
-            if (field) this.fields.push(field);
-        });
-        this.$on('form-item-remove', (field) => {
-            if (field.prop) this.fields.splice(this.fields.indexOf(field), 1);
-        });
-    },
-    methods: {
-        validateFields(fieldNames) {
-            
-        },
-
-        resetFields(fieldNames) {
-
-        }
-    },
-    computed: {
-        classObject() {
+        data() {
             return {
-                [`kl-button--${this.type}`]: !!this.type,
-                [`kl-button--${this.size}`]: !!this.size,
+                fields: []
             };
+        },
+        computed: {
+            classObject() {
+                return {
+                };
+            }
+        },
+        methods: {
+            getFilteredFields(fieldNames) {
+                let fields = this.fields;
+                if (fieldNames && fieldNames.length) {
+                    fields = fields.filter(field => fieldNames.includes(field.prop));
+                }
+                return fields;
+            },
+            validateFields(fieldNames) {
+                return new Promise(async (resolve, reject) => {
+                    let fields = this.getFilteredFields(fieldNames);
+                    const errors = await Promise.all(fields.map(field => field.validate('')));
+                    for (const error of errors) {
+                        if (error) {
+                            return reject(error);
+                        }
+                    }
+                    resolve();
+                });
+            },
+            resetFields(fieldNames) {
+                let fields = this.getFilteredFields(fieldNames);
+                for (const field of fields) {
+                    field.resetField();
+                }
+            }
+        },
+        watch: {
+            rules() {
+                this.validate();
+            }
+        },
+        created() {
+            this.$on('form-item-add', (field) => {
+                if (field) {
+                    this.fields.push(field);
+                }
+            });
+            this.$on('form-item-remove', (field) => {
+                if (field.prop) {
+                    this.fields.splice(this.fields.indexOf(field), 1);
+                }
+            });
         }
-    }
-};
+    };
 </script>

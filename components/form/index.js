@@ -1,7 +1,7 @@
-import KLButton from './button.vue';
+import KLForm from './form.vue';
 
-KLButton.install = function(Vue) {
-    Vue.component(KLButton.name, KLButton);
+KLForm.install = function(Vue) {
+    Vue.component(KLForm.name, KLForm);
 };
 
-export default KLButton;
+export default KLForm;

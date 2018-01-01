@@ -23,7 +23,7 @@
                 default: ''
             },
             maxlength: {
-                type: Number,
+                type: Number
             }
         },
         methods: {

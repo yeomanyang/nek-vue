@@ -19,7 +19,7 @@
     export default {
         name: 'kl-select',
         component: { popper },
-         props: {
+        props: {
             isShow: {
                 type: Boolean,
                 default: false
@@ -35,9 +35,9 @@
             placement: {
                 type: String,
                 default: 'bottom'
-            },
+            }
         },
-        data () {
+        data() {
             return {
                 isShowPopper: this.isShow
             };
@@ -49,7 +49,7 @@
                     return;
                 }
                 this.isShowPopper = !this.isShowPopper;
-            },
+            }
         }
     };
 
