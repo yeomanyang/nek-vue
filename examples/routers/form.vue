@@ -1,8 +1,11 @@
 <template>
     <div>
-        <kl-form ref="form" :data="form" :rules="rules">
-            <kl-form-item label="名字" prop="name">
-
+        <kl-form ref="form" :data="form" :rules="rules" layout="inline">
+            <kl-form-item label="Field1" prop="field1">
+                <input type="text" />
+            </kl-form-item>
+            <kl-form-item label="Field2" prop="field2">
+                <input type="text" />
             </kl-form-item>
         </kl-form>
         <kl-button type="primary" @click="handleSubmit('form')">提交</kl-button>
@@ -13,12 +16,12 @@
         data() {
             return {
                 form: {
-                    name: '12312',
-                    age: 12
+                    field1: '',
+                    field2: ''
                 },
                 rules: {
-                    name: [
-                        { required: true, type: 'string', message: '必须填上名字', trigger: 'change' }
+                    field1: [
+                        { required: true, type: 'string', message: '必须填上Field1', trigger: 'change' }
                     ]
                 }
             };

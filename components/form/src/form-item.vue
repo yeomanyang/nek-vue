@@ -1,6 +1,6 @@
 <template>
     <div :class="classes">
-        <div class="kl-form-item-label">
+        <div class="kl-form-item__label">
             <label for="" v-if="label || $slots.label">
                 <slot name="label">{{ label }}</slot>
             </label>
@@ -9,7 +9,7 @@
             <div class="kl-form-item-control">
                 <slot></slot>
                 <transition name="fade">
-                    <div class="kl-form-item__error" v-if="validateState === stateTypes.ERROR && showMessage && form.showMessage">{{ validateMessage }}</div>
+                    <div class="kl-form-item__tip" v-if="validateState === stateTypes.ERROR && showMessage && form.showMessage">{{ validateMessage }}</div>
                 </transition>
             </div>
         </div>
@@ -114,7 +114,8 @@
                 return [
                     'kl-form-item',
                     {
-                        'kl-form-item-required': this.required || this.isRequired
+                        'kl-form-item--error': this.validateState === this.stateTypes.ERROR,
+                        'kl-form-item--required': this.required || this.isRequired
                     }
                 ];
             }

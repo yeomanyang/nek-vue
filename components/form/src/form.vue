@@ -1,5 +1,5 @@
 <template>
-    <form :class="classObject">
+    <form :class="classes">
         <slot></slot>
     </form>
 </template>
@@ -34,9 +34,15 @@
             };
         },
         computed: {
-            classObject() {
-                return {
-                };
+            classes() {
+                return [
+                    'kl-form',
+                    {
+                        'kl-form--horizontal': this.layout === 'horizontal',
+                        'kl-form--vertical': this.layout === 'vertical',
+                        'kl-form--inline': this.layout === 'inline'
+                    }
+                ];
             }
         },
         methods: {

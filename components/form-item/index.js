@@ -1,4 +1,4 @@
-import KLFormItem from '../form/form-item.vue';
+import KLFormItem from '../form/src/form-item.vue';
 
 KLFormItem.install = function(Vue) {
     Vue.component(KLFormItem.name, KLFormItem);
