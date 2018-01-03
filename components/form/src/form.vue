@@ -14,6 +14,7 @@
                 default: 'horizontal'
             },
             labelWidth: String,
+            labelLineHeight: String,
             rules: Object,
             colon: {
                 type: Boolean,

@@ -1,6 +1,6 @@
 <template>
     <div :class="classes">
-        <div class="kl-form-item__label">
+        <div class="kl-form-item__label" :style="labelStyle">
             <label for="" v-if="label || $slots.label">
                 <slot name="label">{{ label }}</slot>
             </label>
@@ -54,6 +54,7 @@
             prop: String,
             label: String,
             labelWidth: String,
+            labelLineHeight: String,
             required: {
                 type: Boolean,
                 default: false
@@ -78,6 +79,19 @@
         methods: {
         },
         computed: {
+            labelStyle() {
+                let styleObj = {};
+                if (this.form.layout === 'vertical') return styleObj;
+                let labelWidth = this.labelWidth || this.form.labelWidth;
+                let labelLineHeight = this.labelLineHeight || this.form.labelLineHeight;
+                if (labelWidth) {
+                    styleObj['width'] = labelWidth;
+                }
+                if (labelLineHeight) {
+                    styleObj['line-height'] = labelLineHeight;
+                }
+                return styleObj;
+            },
             form() {
                 let parent = this.$parent;
                 while (parent.$options.name !== 'kl-form') {

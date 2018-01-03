@@ -1,10 +1,10 @@
 <template>
     <div>
-        <kl-form ref="form" :data="form" :rules="rules" layout="inline">
-            <kl-form-item label="Field1" prop="field1">
+        <kl-form ref="form" :data="form" :rules="rules" layout="horizontal" label-width="40px" label-line-height="40px">
+            <kl-form-item label="Field1" prop="field1" label-width="100px">
                 <input type="text" />
             </kl-form-item>
-            <kl-form-item label="Field2" prop="field2">
+            <kl-form-item label="Field2" prop="field2" label-line-height="100px">
                 <input type="text" />
             </kl-form-item>
         </kl-form>
