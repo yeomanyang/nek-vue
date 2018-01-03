@@ -9,25 +9,42 @@
         margin: 0;
         padding: 0;
         list-style: none;
-    }
-    @m vertical {
-        & .kl-form-item__label {
-            padding: 0 0 8px;
-            margin: 0;
-            display: block;
-            text-align: left;
-            line-height: var(--line-height-base);
+
+        @m horizontal {
+            & .kl-form-item {
+                height: auto;
+                zoom: 1;
+                display: block;
+            }
+
+            & .kl-form-item__label {
+                float: left;
+            }
+
+            & .form-item-control-wrapper {
+                float: left;
+            }
         }
-    }
-    @m inline {
-        & .kl-form-item {
-            display: inline-block;
-            margin-right: 16px;
-            margin-bottom: 0;
+
+        @m vertical {
+            & .kl-form-item__label {
+                padding: 0 0 8px;
+                margin: 0;
+                display: block;
+                text-align: left;
+                line-height: var(--line-height-base);
+            }
         }
-        & .kl-form-item > div {
-            display: inline-block;
-            vertical-align: middle;
+        @m inline {
+            & .kl-form-item {
+                display: inline-block;
+                margin-right: 16px;
+                margin-bottom: 0;
+            }
+            & .kl-form-item > div {
+                display: inline-block;
+                vertical-align: middle;
+            }
         }
     }
 }
@@ -43,6 +60,16 @@
         margin-bottom: 24px;
         vertical-align: top;
         /* transition: margin 0.15s steps(1); */
+
+        &::after {
+            content: " ";
+            display: table;
+            clear: both;
+            visibility: hidden;
+            font-size: 0;
+            height: 0;
+        }
+
         @e label {
             text-align: right;
             vertical-align: middle;
@@ -50,6 +77,7 @@
             display: inline-block;
             overflow: hidden;
             white-space: nowrap;
+
             & label {
                 position: relative;
             }
