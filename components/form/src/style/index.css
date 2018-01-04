@@ -59,7 +59,6 @@
         list-style: none;
         margin-bottom: 24px;
         vertical-align: top;
-        /* transition: margin 0.15s steps(1); */
 
         &::after {
             content: " ";
@@ -84,10 +83,11 @@
         }
         @e tip {
             color: var(--text-color-secondary);
+            line-height: 1.5;
+            margin-top: -2px;
         }
         @m error {
             margin-bottom: 5px;
-            transition: none;
         }
         @m required {
             & label:before {
@@ -98,6 +98,14 @@
                 line-height: 1;
                 font-size: var(--font-size-base);
                 color: var(--text-color-secondary);
+            }
+        }
+        @m colon {
+            & label:after {
+                content: ":";
+                margin: 0 8px 0 2px;
+                position: relative;
+                top: -0.5px;
             }
         }
     }

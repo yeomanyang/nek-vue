@@ -9,13 +9,13 @@
         name: 'kl-form',
         props: {
             data: Object,
+            labelWidth: String,
+            labelLineHeight: String,
+            rules: Object,
             layout: {
                 type: String,
                 default: 'horizontal'
             },
-            labelWidth: String,
-            labelLineHeight: String,
-            rules: Object,
             colon: {
                 type: Boolean,
                 default: true

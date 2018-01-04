@@ -8,7 +8,7 @@
         <div class="kl-form-item-control-wrapper">
             <div class="kl-form-item-control">
                 <slot></slot>
-                <transition name="fade">
+                <transition name="kl-zoom-in-top">
                     <div class="kl-form-item__tip" v-if="validateState === stateTypes.ERROR && showMessage && form.showMessage">{{ validateMessage }}</div>
                 </transition>
             </div>
@@ -55,6 +55,10 @@
             label: String,
             labelWidth: String,
             labelLineHeight: String,
+            colon: {
+                type: Boolean,
+                default: true
+            },
             required: {
                 type: Boolean,
                 default: false
@@ -128,8 +132,9 @@
                 return [
                     'kl-form-item',
                     {
-                        'kl-form-item--error': this.validateState === this.stateTypes.ERROR,
-                        'kl-form-item--required': this.required || this.isRequired
+                        'kl-form-item--error': this.validateState === this.stateTypes.ERROR && this.showMessage && this.form.showMessage,
+                        'kl-form-item--required': this.required || this.isRequired,
+                        'kl-form-item--colon': this.colon && this.form.colon
                     }
                 ];
             }
