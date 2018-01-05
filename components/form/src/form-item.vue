@@ -116,16 +116,14 @@
             isRequired() {
                 let rules = this.getRules();
                 let isRequired = false;
-
                 if (rules && rules.length) {
                     for (const rule of rules) {
                         if (rule.required) {
                             isRequired = true;
-                            return;
+                            break;
                         }
                     }
                 }
-
                 return isRequired;
             },
             classes() {

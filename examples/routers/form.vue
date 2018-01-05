@@ -1,10 +1,10 @@
 <template>
     <div>
         <kl-form ref="form" :data="form" :rules="rules" layout="horizontal">
-            <kl-form-item label="Field1" prop="field1" :show-message="false" :colon="false">
+            <kl-form-item label="Field1" prop="field1" :colon="false">
                 <input type="text" style="height: 32px;"  v-model="form.field1"/>
             </kl-form-item>
-            <kl-form-item label="Field2" prop="field2">
+            <kl-form-item label="Field2" prop="field2" required>
                 <input type="text" style="height: 32px;" v-model="form.field2" />
             </kl-form-item>
         </kl-form>
@@ -24,7 +24,6 @@
                         { required: true, type: 'string', message: '必须填上Field1', trigger: 'change' }
                     ],
                     field2: [
-                        { required: true, type: 'string', message: '必须填上Field2', trigger: 'change' }
                     ]
                 }
             };
