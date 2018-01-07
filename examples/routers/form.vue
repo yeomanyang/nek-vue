@@ -31,7 +31,7 @@
         methods: {
             async handleSubmit(name) {
                 try {
-                    await this.$refs[name].validateFields();
+                    await this.$refs[name].validateFields(['field1', 'field2']);
                     console.log('校验成功');
                 } catch (err) {
                     console.error(err);

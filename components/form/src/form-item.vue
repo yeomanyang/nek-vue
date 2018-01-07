@@ -142,8 +142,9 @@
             getRules() {
                 let formRules = this.form.rules;
                 const ownRules = this.rules;
+                let requiredRule = this.required !== undefined ? { required: !!this.required } : [];
                 formRules = formRules ? (getPropByPath(formRules, this.prop).v || []) : [];
-                return [].concat(ownRules || formRules || []);
+                return [].concat(ownRules || formRules || []).concat(requiredRule);
             },
             // 过滤非当前trigger的校验
             getFilteredRule(trigger) {
@@ -153,7 +154,7 @@
             validate(trigger) {
                 return new Promise((resolve) => {
                     const rules = this.getFilteredRule(trigger);
-                    if (!rules || !rules.length) {
+                    if (!rules || !rules.length && this.required === undefined) {
                         resolve();
                         return true;
                     }
@@ -209,7 +210,7 @@
                 let rules = this.getRules();
 
                 // 判断是否设置了必填
-                if (rules && rules.length) {
+                if ((rules && rules.length) || this.required !== undefined) {
                     // 失焦的时候触发的事件
                     this.$on('form-blur', this.onFieldBlur);
 
