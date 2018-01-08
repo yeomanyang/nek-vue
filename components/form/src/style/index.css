@@ -81,6 +81,10 @@
                 position: relative;
             }
         }
+        @e desc {
+            vertical-align: top;
+            color: #999;
+        }
         @e tip {
             color: var(--text-color-secondary);
             line-height: 1.5;

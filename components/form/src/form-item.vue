@@ -8,6 +8,9 @@
         <div class="kl-form-item-control-wrapper">
             <div class="kl-form-item-control">
                 <slot></slot>
+                <span class="kl-form-item__desc" v-if="describe || $slots.describe">
+                    <slot name="describe">{{ describe }}</slot>
+                </span>
                 <transition name="kl-zoom-in-top">
                     <div class="kl-form-item__tip" v-if="validateState === stateTypes.ERROR && showMessage && form.showMessage">{{ validateMessage }}</div>
                 </transition>
@@ -34,8 +37,7 @@
             if (key in tempObj) {
                 tempObj = tempObj[key];
             } else {
-                return null;
-                // throw new Error('[nek-vue warning]: please transfer a valid prop path to form item!');
+                return undefined;
             }
         }
         return {
@@ -61,13 +63,13 @@
             },
             required: {
                 type: Boolean,
-                default: false
+                default: undefined
             },
             showMessage: {
                 type: Boolean,
                 default: true
             },
-            descTemplate: String,
+            describe: String,
             textAlign: {
                 type: String,
                 default: 'right'
@@ -111,7 +113,7 @@
 
                 let path = this.prop;
 
-                return getPropByPath(data, path).v;
+                return this.getProp(data, path).v;
             },
             isRequired() {
                 let rules = this.getRules();
@@ -138,18 +140,24 @@
             }
         },
         methods: {
-            // 优先使用自己的校验规则，然后匹配父组件的校验规则
             getRules() {
                 let formRules = this.form.rules;
+                debugger;
                 const ownRules = this.rules;
                 let requiredRule = this.required !== undefined ? { required: !!this.required } : [];
-                formRules = formRules ? (getPropByPath(formRules, this.prop).v || []) : [];
+                let prop = getPropByPath(formRules, this.prop);
+                formRules = formRules ? ((prop && prop.v) || []) : [];
                 return [].concat(ownRules || formRules || []).concat(requiredRule);
             },
-            // 过滤非当前trigger的校验
             getFilteredRule(trigger) {
                 const rules = this.getRules();
+                debugger;
                 return rules.filter(rule => !rule.trigger || rule.trigger.indexOf(trigger) !== -1);
+            },
+            getProp(obj, path) {
+                const prop = getPropByPath(obj, path);
+                if(!prop) throw new Error('[nek-vue warning]: please transfer a valid prop path to form item!');
+                return prop;
             },
             validate(trigger) {
                 return new Promise((resolve) => {
@@ -160,16 +168,13 @@
                     }
                     this.validateState = this.stateTypes.VALIDATING;
 
-                    // 初始化表单验证器
                     let descriptor = {};
                     descriptor[this.prop] = rules;
                     const validator = new schema(descriptor);
 
-                    // 表单的值
                     let data = {};
                     data[this.prop] = this.fieldValue;
 
-                    // 表单校验
                     validator.validate(data, { firstFields: true }, (errors) => {
                         this.validateState = !errors ? this.stateTypes.SUCCESS : this.stateTypes.ERROR;
                         this.validateMessage = errors ? errors[0].message : '';
@@ -185,7 +190,7 @@
                 let data = this.form.data;
                 let value = this.fieldValue;
                 let path = this.prop;
-                let prop = getPropByPath(data, path);
+                let prop = this.getProp(data, path);
 
                 prop.o[prop.k] = Array.isArray(value) ? [].concat(this.initialValue) : this.initialValue;
             },
@@ -198,23 +203,17 @@
         },
         mounted() {
             if (this.prop) {
-                // push到父组件中
                 this.dispatch('kl-form', 'form-item-add', this);
 
-                // 记录初始值，在reset的时候使用
                 Object.defineProperty(this, 'initialValue', {
                     value: this.fieldValue
                 });
 
-                // 获取校验规则
                 let rules = this.getRules();
 
-                // 判断是否设置了必填
                 if ((rules && rules.length) || this.required !== undefined) {
-                    // 失焦的时候触发的事件
                     this.$on('form-blur', this.onFieldBlur);
 
-                    // 改变的时候触发的事件
                     this.$on('form-change', this.onFieldChange);
                 }
             }
