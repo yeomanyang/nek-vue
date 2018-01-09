@@ -1,61 +1,70 @@
 :root {
     /* Color */
-    --primary-color          : #e31436;
-    --info-color             : #80bcf4;
-    --success-color          : #9fe385;
-    --error-color            : #80bcf4;
-    --warning-color          : #f48080;
-    --normal-color           : #ddd;
+    --primary-color: #e31436;
+    --info-color: #80bcf4;
+    --success-color: #9fe385;
+    --error-color: #80bcf4;
+    --warning-color: #f48080;
+    --normal-color: #ddd;
 
     /* Color_BG */
-    --body-background        : #fff;
-    --component-background   : #fff;
-    --background-color-base  : #fff;
+    --body-background: #fff;
+    --component-background: #fff;
+    --background-color-base: #fff;
 
     /* Color_Disabled */
-    --disabled-color         : #999;
-    --disabled-bg            : #eee;
-    --disabled-border        : #ddd;
+    --disabled-color: #999;
+    --disabled-bg: #eee;
+    --disabled-border: #ddd;
 
     /* Color_Text */
-    --text-color             : #333;
-    --text-color-secondary   : #e31436;
-    
+    --text-color: #333;
+    --text-color-secondary: #e31436;
+
     /* Font */
-    --font-family-no-number  : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-family            : "Helvetica Neue For Number", var(--font-family-no-number);
-    --code-family            : Consolas, Menlo, Courier, monospace;
-    --font-size-base         : 12px;
-    --font-size-xs           : calc(var(--font-size-base) - 2);
-    --font-size-lg           : calc(var(--font-size-base) + 4);
-    --line-height-base       : 1.5;
+    --font-family-no-number: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+        "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family: "Helvetica Neue For Number", var(--font-family-no-number);
+    --code-family: Consolas, Menlo, Courier, monospace;
+    --font-size-base: 12px;
+    --font-size-xs: calc(var(--font-size-base) - 2);
+    --font-size-lg: calc(var(--font-size-base) + 4);
+    --line-height-base: 1.5;
 
     /* Border */
 
     /* Border_Radius */
-    --border-radius-base     : 2px;
-    --border-radius-xs       : 1px;
-    --border-radius-lg       : 4px;
-    --border-radius-xl       : 6px;
-
+    --border-radius-base: 2px;
+    --border-radius-xs: 1px;
+    --border-radius-lg: 4px;
+    --border-radius-xl: 6px;
 
     /* Border_Style */
-    --border-color-base      : #ddd; 
-    --border-color-secondary : #e31436; 
-    --border-width-base      : 1px;    
-    --border-style-base      : solid;
+    --border-color-base: #ddd;
+    --border-color-secondary: #e31436;
+    --border-width-base: 1px;
+    --border-style-base: solid;
 
     /* Outline */
-    --outline-blur-size      : 0;
-    --outline-width          : 2px;
-    --outline-color          : var(--primary-color);
+    --outline-blur-size: 0;
+    --outline-width: 2px;
+    --outline-color: var(--primary-color);
 
     /* LINK */
-    --link-color             : var(--primary-color);
-    --link-hover-color       : var(--primary-color);
-    --link-active-color      : var(--primary-color);
-    --link-decoration        : none;
-    --link-hover-decoration  : none;
+    --link-color: var(--primary-color);
+    --link-hover-color: var(--primary-color);
+    --link-active-color: var(--primary-color);
+    --link-decoration: none;
+    --link-hover-decoration: none;
 
-    /* Components */
+    /* Transition */
+    --all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    --fade-linear-transition: opacity 200ms linear;
+    --md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms,
+        opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    --border-transition-base: border-color 0.2s
+        cubic-bezier(0.645, 0.045, 0.355, 1);
+    --color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }

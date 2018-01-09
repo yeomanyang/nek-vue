@@ -35,6 +35,7 @@
                 default: 'bottom'
             },
             value: String
+            }
         },
         data() {
             return {
@@ -44,6 +45,11 @@
         methods: {
             onClick() {
                 this.isShowPopper = true;
+                if (this.trigger == 'custom') {
+                    this.isShowPopper = true;
+                    return;
+                }
+                this.isShowPopper = !this.isShowPopper;
             }
         }
     };

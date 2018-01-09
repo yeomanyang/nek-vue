@@ -1,0 +1,121 @@
+@charset "UTF-8";
+@import "../../../style/theme/var.css";
+
+@component-namespace kl {
+    @b form {
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-base);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @m horizontal {
+            & .kl-form-item {
+                height: auto;
+                zoom: 1;
+                display: block;
+            }
+
+            & .kl-form-item__label {
+                float: left;
+            }
+
+            & .form-item-control-wrapper {
+                float: left;
+            }
+        }
+
+        @m vertical {
+            & .kl-form-item__label {
+                padding: 0 0 8px;
+                margin: 0;
+                display: block;
+                text-align: left;
+                line-height: var(--line-height-base);
+            }
+        }
+        @m inline {
+            & .kl-form-item {
+                display: inline-block;
+                margin-right: 16px;
+                margin-bottom: 0;
+            }
+            & .kl-form-item > div {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+@component-namespace kl {
+    @b form-item {
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-base);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-bottom: 24px;
+        vertical-align: top;
+
+        &::after {
+            content: " ";
+            display: table;
+            clear: both;
+            visibility: hidden;
+            font-size: 0;
+            height: 0;
+        }
+
+        @e label {
+            text-align: right;
+            vertical-align: middle;
+            line-height: 40px;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+
+            & label {
+                position: relative;
+            }
+        }
+        @e desc {
+            vertical-align: top;
+            color: #999;
+        }
+        @e tip {
+            color: var(--text-color-secondary);
+            line-height: 1.5;
+            margin-top: -2px;
+        }
+        @m error {
+            margin-bottom: 5px;
+        }
+        @m required {
+            & label:before {
+                display: inline-block;
+                margin-right: 4px;
+                content: "*";
+                font-family: SimSun;
+                line-height: 1;
+                font-size: var(--font-size-base);
+                color: var(--text-color-secondary);
+            }
+        }
+        @m colon {
+            & label:after {
+                content: ":";
+                margin: 0 8px 0 2px;
+                position: relative;
+                top: -0.5px;
+            }
+        }
+    }
+    @b form-item-control {
+        line-height: 39.9999px;
+        position: relative;
+        zoom: 1;
+    }
+}

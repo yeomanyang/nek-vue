@@ -1,4 +1,6 @@
 import button from './button';
+import form from './form';
+import formItem from './form-item';
 import icon from './icon';
 import dropdown from './dropdown';
 import dropdownItem from './dropdown-item';
@@ -9,6 +11,8 @@ import option from './option';
 
 const components = {
     button,
+    form,
+    formItem,
     icon,
     dropdown,
     dropdownItem,
