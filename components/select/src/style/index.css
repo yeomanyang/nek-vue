@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import '../../../style/theme/var.css';
+
+@component-namespace kl {
+    @b select {
+        display: inline-block;
+        position: relative;
+        @e header {
+            display: inline-block;
+            width: 120px;
+            height: 32px;
+            cursor: pointer;
+            border: 1px solid #eee;
+            font-size: 12px;
+        }
+        @e footer {
+            /* display: none; */
+            position: absolute;
+            width: inherit;
+            max-height: 200px;
+            overflow: auto;
+            margin: 5px 0;
+            padding: 5px 0;
+            background-color: #fff;
+            box-sizing: border-box;
+            border-radius: 4px;
+            box-shadow: 0 1px 6px rgba(0,0,0,.2);
+            z-index: 900;
+            @m show {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@component-namespace kl {
+    @b option {
+        width: 100px;
+        margin: 0;
+        list-style: none;
+        cursor: pointer;
+        font-size: 12px;
+        color: #333;
+        padding: 7px 9px 7px 9px;
+        margin: 6px 0;
+        line-height: 18px;
+        /* transition: background .2s ease-in-out; */
+        &:hover {
+            background: #f1f1f1;
+            color: #444;
+        }
+    }
+}

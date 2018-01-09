@@ -22,6 +22,10 @@ const router = new VueRouter({
         {
             path: '/dropdown',
             component: require('./routers/dropdown.vue')
+        },
+        {
+            path: '/select',
+            component: require('./routers/select.vue')
         }
     ]
 });

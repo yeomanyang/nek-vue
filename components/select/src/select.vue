@@ -1,7 +1,9 @@
 <template>
-    <div class="kl-select">
+    <div class="kl-select"
+        v-bind:value="value"
+        v-on:input="updateValue($event.target.value)">
         <div class="kl-select__header" ref="reference" @click="onClick">
-        <span><</span>
+        <span>{{value}}+</span>
         </div>
         <kl-popper
             class="kl-select__footer"
@@ -19,7 +21,7 @@
     export default {
         name: 'kl-select',
         component: { popper },
-         props: {
+        props: {
             isShow: {
                 type: Boolean,
                 default: false
@@ -28,28 +30,21 @@
                 type: Boolean,
                 default: true
             },
-            trigger: {
-                type: String,
-                default: 'click'
-            },
             placement: {
                 type: String,
                 default: 'bottom'
             },
+            value: String
         },
-        data () {
+        data() {
             return {
                 isShowPopper: this.isShow
             };
         },
         methods: {
             onClick() {
-                if (this.trigger == 'custom') {
-                    this.isShowPopper = true;
-                    return;
-                }
-                this.isShowPopper = !this.isShowPopper;
-            },
+                this.isShowPopper = true;
+            }
         }
     };
 

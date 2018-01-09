@@ -16,13 +16,10 @@
 <script>
     import popper from '../../popper/src/popper.vue';
 
-    import store from './store';
-    import Soda from '../../util/soda';
-
     export default {
         name: 'kl-dropdown',
         component: { popper },
-         props: {
+        props: {
             isShow: {
                 type: Boolean,
                 default: false
@@ -38,9 +35,9 @@
             placement: {
                 type: String,
                 default: 'bottom'
-            },
+            }
         },
-        data () {
+        data() {
             return {
                 isShowPopper: this.isShow
             };
@@ -52,7 +49,7 @@
                     return;
                 }
                 this.isShowPopper = !this.isShowPopper;
-            },
+            }
         }
     };
 

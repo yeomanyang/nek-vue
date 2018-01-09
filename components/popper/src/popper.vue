@@ -25,7 +25,7 @@
                 type: String,
                 default: 'bottom'
             },
-            isShow: false,
+            isShow: false
         },
         data() {
             return {
@@ -36,7 +36,7 @@
             };
         },
         computed: {
-            transition () {
+            transition() {
                 return ['bottom-start', 'bottom', 'bottom-end'].indexOf(this.placement) > -1 ? 'slide-up' : 'fade';
             }
         },

@@ -4,6 +4,8 @@ import dropdown from './dropdown';
 import dropdownItem from './dropdown-item';
 import dropdownMenu from './dropdown-menu';
 import popper from './popper';
+import select from './select';
+import option from './option';
 
 const components = {
     button,
@@ -11,7 +13,9 @@ const components = {
     dropdown,
     dropdownItem,
     dropdownMenu,
-    popper
+    popper,
+    select,
+    option
 };
 
 const install = function(Vue) {
