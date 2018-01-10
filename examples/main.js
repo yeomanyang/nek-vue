@@ -28,6 +28,10 @@ const router = new VueRouter({
         {
             path: '/select',
             component: require('./routers/select.vue')
+        },
+        {
+            path: '/tooltip',
+            component: require('./routers/tooltip.vue')
         }
     ]
 });

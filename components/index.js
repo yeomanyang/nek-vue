@@ -8,6 +8,7 @@ import dropdownMenu from './dropdown-menu';
 import popper from './popper';
 import select from './select';
 import option from './option';
+import tooltip from './tooltip';
 
 const components = {
     button,
@@ -19,7 +20,8 @@ const components = {
     dropdownMenu,
     popper,
     select,
-    option
+    option,
+    tooltip
 };
 
 const install = function(Vue) {

@@ -17,6 +17,7 @@ li + li { border-left: solid 1px #bbb; padding-left: 10px; margin-left: 10px; }
                 <li><router-link to="/dropdown">Dropdown</router-link></li>
                 <li><router-link to="/select">Select</router-link></li>
                 <li><router-link to="/form">Form</router-link></li>
+                <li><router-link to="/tooltip">Tooltip</router-link></li>
             </ul>
         </nav>
         <router-view></router-view>
