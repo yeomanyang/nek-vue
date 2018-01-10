@@ -87,11 +87,13 @@
         computed: {
             labelStyle() {
                 let styleObj = {};
-                if (this.form.layout === 'vertical') return styleObj;
+                if (this.form.layout === 'vertical') {
+                    return styleObj;
+                }
                 let labelWidth = this.labelWidth || this.form.labelWidth;
                 let labelLineHeight = this.labelLineHeight || this.form.labelLineHeight;
                 if (labelWidth) {
-                    styleObj['width'] = labelWidth;
+                    styleObj.width = labelWidth;
                 }
                 if (labelLineHeight) {
                     styleObj['line-height'] = labelLineHeight;
@@ -142,7 +144,6 @@
         methods: {
             getRules() {
                 let formRules = this.form.rules;
-                debugger;
                 const ownRules = this.rules;
                 let requiredRule = this.required !== undefined ? { required: !!this.required } : [];
                 let prop = getPropByPath(formRules, this.prop);
@@ -151,12 +152,13 @@
             },
             getFilteredRule(trigger) {
                 const rules = this.getRules();
-                debugger;
                 return rules.filter(rule => !rule.trigger || rule.trigger.indexOf(trigger) !== -1);
             },
             getProp(obj, path) {
                 const prop = getPropByPath(obj, path);
-                if(!prop) throw new Error('[nek-vue warning]: please transfer a valid prop path to form item!');
+                if(!prop) {
+                    throw new Error('[nek-vue warning]: please transfer a valid prop path to form item!');
+                }
                 return prop;
             },
             validate(trigger) {

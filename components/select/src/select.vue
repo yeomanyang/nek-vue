@@ -35,7 +35,6 @@
                 default: 'bottom'
             },
             value: String
-            }
         },
         data() {
             return {
