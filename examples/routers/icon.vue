@@ -1,8 +1,10 @@
 <template>
     <div style="padding: 100px">
 
-        <kl-icon type="home" fontSize="30"></kl-icon>
-        点击复制
+        <kl-icon type="home" color="red" fontSize="30"></kl-icon>
+        <br>
+        以下icon可以点击复制
+        <br>
         <kl-icon type="home" @click="copy"></kl-icon>
         <kl-icon type="rotate-left" @click="copy"></kl-icon>
         <kl-icon type="upload" @click="copy"></kl-icon>

@@ -7,7 +7,7 @@ export default {
     name: 'kl-icon',
     props: {
         type: String,
-        fontSize: String,
+        fontSize: Number,
         color: String
     },
     methods: {
@@ -27,13 +27,13 @@ export default {
             let style = {};
 
             if (!!this.fontSize) {
-                style.fontsize = `${this.fontSize}px`;
+                style.fontSize = `${this.fontSize}px`;
             }
 
             if (!!this.color) {
                 style.color = this.color;
             }
-            console.log(style);
+
             return style;
         }
     }
