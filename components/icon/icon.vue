@@ -11,21 +11,23 @@ export default {
         color: String
     },
     methods: {
-        onClick() {
-            this.$emit('click');
+        onClick(event) {
+            this.$emit('click', {
+                event
+            });
         }
     },
     computed: {
         klass() {
             return {
-                [`kl-icon-${this.type}`]: !!this.type
+                [`kl-icon_${this.type}`]: !!this.type
             };
         },
         style() {
             let style = {};
 
             if (!!this.fontSize) {
-                style.fontsize = `${this.fontSize}px`;
+                style.fontSize = `${this.fontSize}px`;
             }
 
             if (!!this.color) {
