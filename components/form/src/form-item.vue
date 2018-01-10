@@ -3,6 +3,9 @@
         <div class="kl-form-item__label" :style="labelStyle">
             <label for="" v-if="label || $slots.label">
                 <slot name="label">{{ label }}</slot>
+                <kl-tooltip :tip="tip">
+                    <kl-icon type="warning" />
+                </kl-tooltip>
             </label>
         </div>
         <div class="kl-form-item-control-wrapper">
@@ -20,6 +23,9 @@
 </template>
 
 <script>
+    import KLIcon from '../../icon/index';
+    import KLTooltip from '../../tooltip/index';
+
     import schema from 'async-validator';
     import emitter from '@/mixins/emitter';
     import * as stateTypes from './validate-state';
@@ -73,7 +79,8 @@
             textAlign: {
                 type: String,
                 default: 'right'
-            }
+            },
+            tip: String
         },
         data() {
             return {
@@ -82,7 +89,9 @@
                 validateMessage: ''
             };
         },
-        methods: {
+        components: {
+            KLIcon,
+            KLTooltip
         },
         computed: {
             labelStyle() {

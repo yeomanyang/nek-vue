@@ -76,9 +76,13 @@
             display: inline-block;
             overflow: hidden;
             white-space: nowrap;
+            padding-right: 8px;
 
             & label {
                 position: relative;
+            }
+            & i {
+                color: #ccc;
             }
         }
         @e desc {
@@ -105,6 +109,10 @@
             }
         }
         @m colon {
+            & .kl-form-item__label {
+                padding-right: 0;
+            }
+
             & label:after {
                 content: ":";
                 margin: 0 8px 0 2px;
