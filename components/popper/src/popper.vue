@@ -52,8 +52,14 @@
         },
         methods: {
             destroyPopper() {
-                this.popperJS.destroy();
+                // todo: 待优化（这种方式感觉不是很好）
+                if (document.body.contains(this.$el)) {
+                    this.$el && document.body.removeChild(this.$el);
+                }
+
+                this.popperJS && this.popperJS.destroy();
                 this.popperJS = null;
+
             },
             updatePopper() {
                 if (!this.popperJS && this.appendToBody === true) {
