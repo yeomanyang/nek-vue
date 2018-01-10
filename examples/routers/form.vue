@@ -3,12 +3,14 @@
         <kl-form ref="form" :data="form" :rules="rules" layout="horizontal">
             <kl-form-item label="Field1" prop="test.field1" :colon="false">
                 <span slot="describe" style="color:aqua">asda</span>
-                <input type="text" style="height: 32px;"  v-model="form.field1"/>
+                <input type="text" style="height: 32px;"  v-model="form.test.field1"/>
             </kl-form-item>
             <kl-form-item label="Field2" prop="field2" required>
                 <input type="text" style="height: 32px;" v-model="form.field2" />
             </kl-form-item>
             <kl-form-item :prop="`list.${index}.value`" v-for="(item, index) in form.list">
+                <span slot="describe">123</span>
+                <input type="text" style="height: 32px;"  v-model="form.field1"/>
                 <span slot="label" style="color:blueviolet">asd</span>
             </kl-form-item>
         </kl-form>

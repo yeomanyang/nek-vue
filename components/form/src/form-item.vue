@@ -11,9 +11,9 @@
                 <span class="kl-form-item__desc" v-if="describe || $slots.describe">
                     <slot name="describe">{{ describe }}</slot>
                 </span>
-                <transition name="kl-zoom-in-top">
+                <!-- <transition name="kl-zoom-in-top"> -->
                     <div class="kl-form-item__tip" v-if="validateState === stateTypes.ERROR && showMessage && form.showMessage">{{ validateMessage }}</div>
-                </transition>
+                <!-- </transition> -->
             </div>
         </div>
     </div>
