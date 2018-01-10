@@ -7,7 +7,7 @@ export default {
     name: 'kl-icon',
     props: {
         type: String,
-        fontSize: Number,
+        fontSize: String,
         color: String
     },
     methods: {
