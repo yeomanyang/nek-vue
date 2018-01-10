@@ -1,5 +1,5 @@
 <template>
-    <li :class="classes" @click="onClick"><slot></slot></li>
+    <li :class="classes" @click="onClick">{{name}}<slot></slot></li>
 </template>
 <script>
     export default {
@@ -9,25 +9,27 @@
                 type: Boolean,
                 default: false
             },
-            selected: {
-                type: Boolean,
-                default: false
-            },
             divided: {
                 type: Boolean,
                 default: false
-            }
+            },
+            id: '',
+            name: String
         },
         methods: {
             onClick() {
-                const $parent = this.$parent.$parent.$parent;
+                const $parent = this.$parent.$parent;
 
-                $parent.$emit('click');
-                console.log($parent);
+                $parent.$emit('click', {
+                    selected: {
+                        id: this.id,
+                        name: this.name
+                    }
+                });
 
-                if ($parent.trigger == 'custom') {
-                    return;
-                }
+                $parent.$emit('update:value', this.id);
+                $parent.value = this.id;
+        
                 $parent.isShowPopper = false;
             }
         },
