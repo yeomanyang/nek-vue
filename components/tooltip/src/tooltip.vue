@@ -38,7 +38,7 @@
             }
         },
         computed: {
-            isShowTips () {
+            isShowTips() {
                 return this.tip !== '';
             }
         },

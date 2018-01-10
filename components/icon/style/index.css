@@ -1,1 +1,111 @@
 
+@font-face {
+    font-family: 'nekicons';
+    src:  url('fonts/nekicons.eot?jcrzhu');
+    src:  url('fonts/nekicons.eot?jcrzhu#iefix') format('embedded-opentype'),
+      url('fonts/nekicons.ttf?jcrzhu') format('truetype'),
+      url('fonts/nekicons.woff?jcrzhu') format('woff'),
+      url('fonts/nekicons.svg?jcrzhu#nekicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  [class^="kl-icon_"], [class*=" kl-icon_"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'nekicons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .kl-icon_rotate-left:before {
+    content: "\e900";
+  }
+  .kl-icon_upload:before {
+    content: "\e901";
+  }
+  .kl-icon_download:before {
+    content: "\e902";
+  }
+  .kl-icon_zoomin:before {
+    content: "\e903";
+  }
+  .kl-icon_expand:before {
+    content: "\e904";
+  }
+  .kl-icon_circle-trash:before {
+    content: "\e905";
+  }
+  .kl-icon_zoomout:before {
+    content: "\e906";
+  }
+  .kl-icon_rezoom:before {
+    content: "\e907";
+  }
+  .kl-icon_rotate-right:before {
+    content: "\e908";
+  }
+  .kl-icon_refresh:before {
+    content: "\e909";
+  }
+  .kl-icon_warning:before {
+    content: "\e90a";
+  }
+  .kl-icon_edit:before {
+    content: "\e90b";
+  }
+  .kl-icon_info:before {
+    content: "\e90c";
+  }
+  .kl-icon_error:before {
+    content: "\e90d";
+  }
+  .kl-icon_success:before {
+    content: "\e90e";
+  }
+  .kl-icon_chevron-left:before {
+    content: "\e90f";
+  }
+  .kl-icon_chevron-right:before {
+    content: "\e910";
+  }
+  .kl-icon_search:before {
+    content: "\e911";
+  }
+  .kl-icon_remove:before {
+    content: "\e912";
+  }
+  .kl-icon_ok:before {
+    content: "\e913";
+  }
+  .kl-icon_check-empty:before {
+    content: "\e914";
+  }
+  .kl-icon_chevron-down:before {
+    content: "\e915";
+  }
+  .kl-icon_add:before {
+    content: "\e916";
+  }
+  .kl-icon_calendar:before {
+    content: "\e91b";
+  }
+  .kl-icon_line:before {
+    content: "\e91c";
+  }
+  .kl-icon_trash:before {
+    content: "\e91f";
+  }
+  .kl-icon_plus:before {
+    content: "\e920";
+  }
+  .kl-icon_home:before {
+    content: "\e921";
+  }

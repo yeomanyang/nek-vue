@@ -32,6 +32,10 @@ const router = new VueRouter({
         {
             path: '/tooltip',
             component: require('./routers/tooltip.vue')
+        },
+        {
+            path: '/icon',
+            component: require('./routers/icon.vue')
         }
     ]
 });
