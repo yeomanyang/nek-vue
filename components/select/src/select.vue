@@ -23,6 +23,10 @@
     export default {
         name: 'kl-select',
         component: { popper },
+         model: {
+            prop: 'value',
+            event: 'update'
+        },
         props: {
             isShow: {
                 type: Boolean,

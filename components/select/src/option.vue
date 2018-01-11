@@ -28,8 +28,9 @@
                 });
 
                 $parent.$emit('update:value', this.id);
+                $parent.$emit('update', this.id);
                 $parent.value = this.id;
-        
+
                 $parent.isShowPopper = false;
             }
         },

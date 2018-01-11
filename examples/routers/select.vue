@@ -4,6 +4,13 @@
             <kl-option v-for="item in list" :id="item.id" :name="item.name"></kl-option>
         </kl-select>
         {{value}}
+
+        <div style="padding: 100px">
+            <kl-select @click="onClick" v-model="value2">
+                <kl-option v-for="item in list" :id="item.id" :name="item.name"></kl-option>
+            </kl-select>
+            {{value2}}
+        </div>
     </div>
 </template>
 <script>
@@ -29,7 +36,8 @@
                    }
                ],
                model1: '',
-               value: '4'
+               value: '4',
+               value2: ''
            };
        },
        methods: {
