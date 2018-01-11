@@ -21,7 +21,7 @@
                 float: left;
             }
 
-            & .form-item-control-wrapper {
+            & .kl-form-item-control-wrapper {
                 float: left;
             }
         }
@@ -59,7 +59,6 @@
         list-style: none;
         margin-bottom: 20px;
         vertical-align: top;
-
         &::after {
             content: " ";
             display: table;
