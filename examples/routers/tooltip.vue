@@ -10,6 +10,10 @@
         <kl-tooltip tip="12312312">
             test2
         </kl-tooltip>
+
+        <kl-tooltip :tip="12312312312312">
+            <kl-icon type="warning" />
+        </kl-tooltip>
     </div>
 </template>
 <script>

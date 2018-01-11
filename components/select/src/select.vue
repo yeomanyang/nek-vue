@@ -1,9 +1,11 @@
 <template>
-    <div class="kl-select"
-        v-bind:value="value"
-        v-on:input="updateValue($event.target.value)">
+    <div class="kl-select">
         <div class="kl-select__header" ref="reference" @click="onClick">
-        <span>{{value}}+</span>
+            <span class="kl-select__header--placeholder">
+                <!-- {{placeholderView}} -->
+                {{value}}
+                <kl-icon class="kl-select__header__icon" type="chevron-down" />
+            </span>
         </div>
         <kl-popper
             class="kl-select__footer"
@@ -21,6 +23,10 @@
     export default {
         name: 'kl-select',
         component: { popper },
+         model: {
+            prop: 'value',
+            event: 'update'
+        },
         props: {
             isShow: {
                 type: Boolean,
@@ -34,7 +40,11 @@
                 type: String,
                 default: 'bottom'
             },
-            value: String
+            value: '',
+            placeholder: {
+                type: String,
+                default: '请选择'
+            }
         },
         data() {
             return {
@@ -43,12 +53,12 @@
         },
         methods: {
             onClick() {
-                this.isShowPopper = true;
-                if (this.trigger == 'custom') {
-                    this.isShowPopper = true;
-                    return;
-                }
                 this.isShowPopper = !this.isShowPopper;
+            }
+        },
+        computed: {
+            placeholderView() {
+                return this.value || this.placeholder
             }
         }
     };
