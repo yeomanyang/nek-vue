@@ -15,7 +15,7 @@
             </kl-form-item>
         </kl-form>
         <kl-button type="primary" @click="handleSubmit('form')">提交</kl-button>
-        <kl-button type="primary" @click="handleReset('form')">重置</kl-button>
+        <kl-button s type="primary" @click="handleReset('form')">重置</kl-button>
     </div>
 </template>
 <script>
