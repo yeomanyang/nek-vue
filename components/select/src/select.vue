@@ -58,7 +58,7 @@
         },
         computed: {
             placeholderView() {
-                return this.name || this.placeholder
+                return this.name || this.placeholder;
             }
         }
     };

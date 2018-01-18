@@ -9,6 +9,8 @@ import popper from './popper';
 import select from './select';
 import option from './option';
 import tooltip from './tooltip';
+import check from './check';
+import checkGroup from './check-group';
 
 const components = {
     button,
@@ -21,7 +23,9 @@ const components = {
     popper,
     select,
     option,
-    tooltip
+    tooltip,
+    check,
+    checkGroup
 };
 
 const install = function(Vue) {

@@ -28,7 +28,6 @@
                 const $parent = this.$parent.$parent.$parent;
 
                 $parent.$emit('click');
-                console.log($parent);
 
                 if ($parent.trigger == 'custom') {
                     return;

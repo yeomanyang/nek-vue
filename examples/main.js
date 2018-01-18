@@ -36,6 +36,10 @@ const router = new VueRouter({
         {
             path: '/icon',
             component: require('./routers/icon.vue')
+        },
+        {
+            path: '/check',
+            component: require('./routers/check.vue')
         }
     ]
 });

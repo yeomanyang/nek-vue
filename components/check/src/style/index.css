@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@import '../../../style/theme/var.css';
+@component-namespace kl {
+    @b check {
+        display:inline-block;
+        cursor: pointer;
+        white-space:nowrap;
+        font-size: 12px;
+        @e box {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin-right: 8px;
+            height: 13px;
+            width: 13px;
+            line-height: 12px;
+            vertical-align: text-top;
+            background: white;
+            color: #E61438;
+            border: 1px solid #ddd;
+            @m checked {
+                border: 1px solid #e61438;
+            }
+            @e okicon {
+                display: inline-block;
+                font-size: 13px;
+                line-height: 13px;
+                &:before {
+                    content: "\E913";
+                }
+            }
+        }
+    }
+}
