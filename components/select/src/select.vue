@@ -2,8 +2,7 @@
     <div class="kl-select">
         <div class="kl-select__header" ref="reference" @click="onClick">
             <span class="kl-select__header--placeholder">
-                <!-- {{placeholderView}} -->
-                {{value}}
+                {{placeholderView}}
                 <kl-icon class="kl-select__header__icon" type="chevron-down" />
             </span>
         </div>
@@ -23,7 +22,7 @@
     export default {
         name: 'kl-select',
         component: { popper },
-         model: {
+        model: {
             prop: 'value',
             event: 'update'
         },
@@ -48,7 +47,8 @@
         },
         data() {
             return {
-                isShowPopper: this.isShow
+                isShowPopper: this.isShow,
+                name: ''
             };
         },
         methods: {
@@ -58,7 +58,7 @@
         },
         computed: {
             placeholderView() {
-                return this.value || this.placeholder
+                return this.name || this.placeholder
             }
         }
     };
