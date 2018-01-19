@@ -44,6 +44,10 @@ const router = new VueRouter({
         {
             path: '/radio',
             component: require('./routers/radio.vue')
+        },
+        {
+            path: '/crumb',
+            component: require('./routers/crumb.vue')
         }
     ]
 });

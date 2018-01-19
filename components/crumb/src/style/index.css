@@ -1,7 +1,39 @@
 @charset "UTF-8";
 @import '../../../style/theme/var.css';
+
 @component-namespace kl {
     @b crumb {
+        color: #333;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+}
 
+@component-namespace kl {
+    @b crumb-item {
+        display: inline;
+        color: #333;
+        &:hover {
+            cursor: pointer;
+        }
+        &:last-child{
+            font-weight: bold;
+            &:hover {
+                cursor: inherit;
+            }
+        }
+        @e separator {
+            margin: 0 10px;
+        }
+        @e link {
+            text-decoration: none;
+            color: #333;
+            transition: color .2s ease;
+            &:hover {
+                color: #49a9ee;
+            }
+        }
     }
 }
