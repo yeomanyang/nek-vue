@@ -1,6 +1,6 @@
 <template>
     <div :class="classes">
-        <slot ref=""></slot>
+        <slot></slot>
     </div>
 </template>
 <script>

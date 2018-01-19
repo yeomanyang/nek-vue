@@ -49,14 +49,26 @@ export default {
     },
     methods: {
         onClick() {
-            if (this.disabled) {
+            if (this.disabled || this.currentValue) {
                 return;
             }
 
             this.currentValue = true;
+            this.$emit('input', true);
 
+
+            const $parent = this.$parent;
+            if ($parent.$options.name === 'kl-radio-group') {
+                $parent.change({
+                    value: this.currentValue,
+                    id: this.id
+                });
+            }
+        },
+        initValue() {
+            this.currentValue = (this.id == this.groupValue);
+            this.$emit('input', this.currentValue);
         }
-
     },
     mounted () {
         this.currentValue = this.value;
