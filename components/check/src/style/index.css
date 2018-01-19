@@ -31,5 +31,13 @@
                 }
             }
         }
+        @m inline {
+            margin-right: 40px;
+        }
+        /* todo */
+        @m block {
+            display: block;
+            line-height: 32px;
+        }
     }
 }

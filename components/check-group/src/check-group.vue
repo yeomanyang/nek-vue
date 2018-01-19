@@ -1,6 +1,6 @@
 <template>
     <div :class="classes">
-        <slot></slot>
+        <slot ref=""></slot>
     </div>
 </template>
 <script>
@@ -18,7 +18,7 @@
         },
         data() {
             return {
-                modelValue: []
+                groupValue: []
             };
         },
         props: {
@@ -31,16 +31,34 @@
             disabled: {
                 type: Boolean,
                 default: false
-            }
+            },
+            layout: ''   // 名字(传值)还没想好
         },
         methods: {
             onClick() {
                 this.$emit('input', !this.value);
             },
-            change(value) {
-                this.modelValue.push(value);
-                this.$emit('input', this.modelValue);
+            change(options) {
+                const id = options.id;
+
+                if (options.value === true) {
+                    this.groupValue.push(id)
+                } else {
+                    this.groupValue = this.groupValue.filter(item => item != id);
+                }
+                console.log(123);
+                this.$emit('input', this.groupValue);
             }
+        },
+        mounted () {
+            this.groupValue = this.value;
+            this.$children.forEach(element => {
+                element.groupValue = this.value;
+                element.initValue();
+
+                // 设置样式：横向布局还是垂直布局
+                element.layout = this.layout || '';
+            });
         }
     };
 
