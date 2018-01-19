@@ -26,9 +26,6 @@
                 display: inline-block;
                 font-size: 13px;
                 line-height: 13px;
-                &:before {
-                    content: "\E913";
-                }
             }
         }
         @m inline {
