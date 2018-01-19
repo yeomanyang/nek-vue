@@ -40,6 +40,10 @@ const router = new VueRouter({
         {
             path: '/check',
             component: require('./routers/check.vue')
+        },
+        {
+            path: '/radio',
+            component: require('./routers/radio.vue')
         }
     ]
 });

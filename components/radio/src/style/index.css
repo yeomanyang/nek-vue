@@ -1,8 +1,48 @@
 @charset "UTF-8";
 @import '../../../style/theme/var.css';
-
 @component-namespace kl {
     @b radio {
-
+        display:inline-block;
+        cursor: pointer;
+        white-space:nowrap;
+        font-size: 12px;
+        @e box {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin-right: 8px;
+            height: 13px;
+            width: 13px;
+            line-height: 13px;
+            vertical-align: text-top;
+            background: #fff;
+            color: #e31436;
+            border: 1px solid #dfe3e9;
+            border-radius: 13px;
+            @m checked {
+                border: 1px solid #e61438;
+            }
+            @e okicon {
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -3.5px;
+                margin-left: -3.5px;
+                width: 7px;
+                height: 7px;
+                border-radius: 7px;
+                background: #e61438;
+            }
+        }
+        @m inline {
+            margin-right: 40px;
+        }
+        /* todo */
+        @m block {
+            display: block;
+            line-height: 32px;
+        }
     }
 }
