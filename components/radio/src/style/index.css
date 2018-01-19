@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@import '../../../style/theme/var.css';
+
+@component-namespace kl {
+    @b radio {
+
+    }
+}

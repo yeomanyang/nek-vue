@@ -11,6 +11,7 @@ import option from './option';
 import tooltip from './tooltip';
 import check from './check';
 import checkGroup from './check-group';
+import radio from './radio';
 
 const components = {
     button,
@@ -25,7 +26,8 @@ const components = {
     option,
     tooltip,
     check,
-    checkGroup
+    checkGroup,
+    radio
 };
 
 const install = function(Vue) {
