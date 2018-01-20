@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import '../../../style/theme/var.css';
+
+@component-namespace kl {
+    @b input {
+        outline: none;
+        appearance: none;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 8px 10px 8px 8px;
+        color: #333;
+        background: #fff;
+        border-radius: 2px;
+        border: 1px solid #ddd;
+        font-size: 12px;
+        line-height: 1.2;
+        transition: border-color 1.2s ease;
+        &:focus {
+            outline: 0;
+            /* todo: border 颜色问下视觉 */
+            border: 1px solid #4da3f8;
+        }
+        &::-webkit-input-placeholder {
+            color: #999;
+        }
+    }
+}
+

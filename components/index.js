@@ -15,6 +15,7 @@ import radio from './radio';
 import radioGroup from './radio-group';
 import crumbItem from './crumb-item';
 import crumb from './crumb';
+import input from './input';
 
 const components = {
     button,
@@ -33,7 +34,8 @@ const components = {
     radio,
     radioGroup,
     crumbItem,
-    crumb
+    crumb,
+    input
 };
 
 const install = function(Vue) {

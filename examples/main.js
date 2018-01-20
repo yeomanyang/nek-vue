@@ -48,6 +48,10 @@ const router = new VueRouter({
         {
             path: '/crumb',
             component: require('./routers/crumb.vue')
+        },
+        {
+            path: '/input',
+            component: require('./routers/input.vue')
         }
     ]
 });

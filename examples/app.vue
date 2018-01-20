@@ -22,6 +22,7 @@ li + li { border-left: solid 1px #bbb; padding-left: 10px; margin-left: 10px; }
                 <li><router-link to="/check">Check</router-link></li>
                 <li><router-link to="/radio">Radio</router-link></li>
                 <li><router-link to="/crumb">Crumb</router-link></li>
+                <li><router-link to="/input">Input</router-link></li>
             </ul>
         </nav>
         <router-view></router-view>
